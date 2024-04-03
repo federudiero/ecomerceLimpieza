@@ -7,6 +7,7 @@ import Carrito from './Components/Carrito/Carrito'; // Ruta actualizada de impor
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCart } from './redux/actions';
 import Footer from './Components/Footer/Footer';
+import NosotrosView from './views/NosotrosView';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product-detail/:productId" element={<DetailProductoId />} />
         <Route path="/carrito" element={<Carrito />} />
+        <Route path="/nosotros" element={<NosotrosView />} />
       </Routes>
       <Footer/>
     </div>

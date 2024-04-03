@@ -1,12 +1,13 @@
 import React from 'react'
 import Filter from '../filter/Filter'
 import style from '../navBar/NavBar.module.css'
-import { Link } from 'react-router-dom'
+import { Link ,useLocation } from 'react-router-dom'
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import HomeIcon from '@mui/icons-material/Home';
 
 
 function NavBar() {
+  const location = useLocation();
   return (
     <div className={style.containerNavBar}>
       <div className="navbar bg-base-100 flex gap-4">
@@ -18,19 +19,31 @@ function NavBar() {
         >
           <HomeIcon/>
         </Link>
-      <a className="btn btn-ghost text-xl">Contacto</a>
-      <a className="btn btn-ghost text-xl">Nosotros</a>
+        <Link
+          to={`/nosotros`}
+          
+          className="btn btn-ghost text-xl"
+        >
+         Nosotros
+        </Link>
+        <Link
+          to={`/contacto`}
+          
+          className="btn btn-ghost text-xl"
+        >
+         Contacto
+        </Link>
+     
     </div>
 
-    <div>
-
-        <Filter/>
-    </div>
+    {location.pathname === '/' && (
+          <div>
+            <Filter />
+          </div>
+        )}
 
     <div className="flex-none gap-2">
-      <div className="form-control">
-        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-      </div>
+      
       <Link
           to={`/carrito`}
           className="btn"

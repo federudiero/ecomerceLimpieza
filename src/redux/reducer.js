@@ -1,4 +1,4 @@
-import { DATA_JSON, FILTER_BY_CATEGORY , RESET_FILTERS,SET_SELECTED_PRODUCT_ID ,UPDATE_PRODUCT_QUANTITY ,ADD_TO_CART,UPDATE_CART ,REMOVE_CART,UPDATE_CART_COUNT} from '../redux/actionsType';
+import { DATA_JSON, FILTER_BY_CATEGORY , RESET_FILTERS,SET_SELECTED_PRODUCT_ID ,UPDATE_PRODUCT_QUANTITY ,ADD_TO_CART,UPDATE_CART ,REMOVE_CART,UPDATE_CART_COUNT ,SEARCH_BY_NAME} from '../redux/actionsType';
 import { VIEW_PRODUCT_DETAILS } from '../redux/actionsType';
 
 
@@ -13,7 +13,8 @@ const initialState = {
   selectedProductId: null,
   selectedProductQuantity: 1,
   cart: [],
-  cartCounts: JSON.parse(localStorage.getItem('cartCounts')) || {} // Cargar los recuentos de productos desde el almacenamiento local
+  cartCounts: JSON.parse(localStorage.getItem('cartCounts')) || {} ,// Cargar los recuentos de productos desde el almacenamiento local
+  searchTerm: '',
 };
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -117,6 +118,11 @@ case 'UPDATE_CART':
         ...state,
         cartCounts: updatedCartCounts
       };
+      case SEARCH_BY_NAME:
+            return {
+                ...state,
+                searchTerm: action.payload
+            };
 
 
 

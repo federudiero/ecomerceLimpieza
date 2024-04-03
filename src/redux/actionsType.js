@@ -9,6 +9,7 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const UPDATE_CART = 'UPDATE_CART';
 export const REMOVE_CART = 'REMOVE_CART';
 export const UPDATE_CART_COUNT = 'UPDATE_CART_COUNT';
+export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';
 
 
 

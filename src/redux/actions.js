@@ -1,4 +1,4 @@
-import { DATA_JSON, FILTER_BY_CATEGORY, FILTER_BY_PRICE_RANGE, RESET_FILTERS,VIEW_PRODUCT_DETAILS ,SET_SELECTED_PRODUCT_ID,UPDATE_PRODUCT_QUANTITY ,ADD_TO_CART ,UPDATE_CART,REMOVE_CART,UPDATE_CART_COUNT} from '../redux/actionsType';
+import { DATA_JSON, FILTER_BY_CATEGORY, FILTER_BY_PRICE_RANGE, RESET_FILTERS,VIEW_PRODUCT_DETAILS ,SET_SELECTED_PRODUCT_ID,UPDATE_PRODUCT_QUANTITY ,ADD_TO_CART ,UPDATE_CART,REMOVE_CART,UPDATE_CART_COUNT,SEARCH_BY_NAME} from '../redux/actionsType';
 
 import productosJson from '../data/productos.json'; // Importa el archivo JSON
 
@@ -79,3 +79,7 @@ export const addToCart = (product) => {
       payload: { itemId, count }
     };
   };
+  export const searchByName = searchTerm => ({
+    type: SEARCH_BY_NAME,
+    payload: searchTerm
+});

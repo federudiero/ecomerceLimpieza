@@ -1,13 +1,16 @@
+// Cards.js
 import React, { useEffect } from 'react';
 import { dataJson } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import style from '../cards/Cards.module.css';
+import ComponenteDescuento from '../componenteDescuento/ComponenteDescuento';
 
 function Cards() {
     const dispatch = useDispatch();
-    const products = useSelector(state => state.productos); // Usar productos directamente
+    const products = useSelector(state => state.productos);
     const filteredProducts = useSelector(state => state.filteredProductos);
+    const searchTerm = useSelector(state => state.searchTerm);
 
     useEffect(() => {
         if (!filteredProducts || filteredProducts.length === 0) {
@@ -15,17 +18,23 @@ function Cards() {
         }
     }, [dispatch, filteredProducts]);
 
-    const productsToDisplay = filteredProducts.length > 0 ? filteredProducts : products; // Usar filteredProducts si está disponible, de lo contrario, utilizar productos
+    const productsToDisplay = filteredProducts.length > 0 ? filteredProducts : products;
 
-    if (!productsToDisplay || productsToDisplay.length === 0) {
+    // Filtrar productos según el término de búsqueda
+    const filteredBySearch = productsToDisplay.filter(product =>
+        product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (!filteredBySearch || filteredBySearch.length === 0) {
         return <div>No hay productos disponibles</div>;
     }
 
     return (
         <div className={style.cardsContainerPadreMayor}>
+            <ComponenteDescuento/> 
             <div className={style.cardsContainer}>
                 <div className={style.gridContainer}>
-                    {productsToDisplay.map(product => (
+                    {filteredBySearch.map(product => (
                         <Card
                             key={product.id}
                             nombre={product.nombre}
