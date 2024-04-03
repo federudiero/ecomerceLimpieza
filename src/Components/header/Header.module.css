@@ -1,0 +1,37 @@
+
+
+
+.whatsappButton {
+    height: 80px;
+    width: 200px;
+    background-color: #B2EBF2; /* Light blue pastel color */
+    color: #171717; /* Black text color */
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    animation: whatsapp-pulse 2s infinite, whatsapp-color-change 4s infinite; /* Continuous pulse and color change animation */
+    font-size: 25px;
+  }
+  
+  @keyframes whatsapp-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes whatsapp-color-change {
+    0%, 100% {
+      background-color: #d2d5d5; /* Light blue pastel color */
+    }
+    50% {
+      background-color: #ffe600; /* Yellow color */
+    }
+  }
+  

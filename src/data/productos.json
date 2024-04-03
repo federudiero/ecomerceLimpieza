@@ -1,0 +1,362 @@
+[
+  {
+      "id": 1,
+      "nombre": "Detergente líquido para ropa",
+      "category": "Jabón líquido",
+      "precio": 8.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente líquido especialmente formulado para limpiar y dejar tu ropa fresca y limpia."
+  },
+  {
+      "id": 2,
+      "nombre": "Limpiavidrios",
+      "category": "Limpieza",
+      "precio": 4.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiavidrios de alta calidad que elimina la suciedad y deja tus vidrios sin manchas ni rayas."
+  },
+  {
+      "id": 3,
+      "nombre": "Desinfectante multiusos",
+      "category": "Limpieza",
+      "precio": 6.49,
+       "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desinfectante versátil que elimina gérmenes y bacterias de diversas superficies, dejando un aroma fresco."
+  },
+  {
+      "id": 4,
+      "nombre": "Limpiador de baños",
+      "category": "Limpieza",
+      "precio": 5.99,
+      "imagen":"https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Efectivo limpiador diseñado para eliminar la suciedad y los gérmenes de tus baños, dejándolos limpios y frescos."
+  },
+  {
+      "id": 5,
+      "nombre": "Detergente para lavavajillas",
+      "category": "Limpieza",
+      "precio": 10.99,
+       "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente concentrado para lavavajillas que elimina la grasa y deja tus platos limpios y relucientes."
+  },
+  {
+      "id": 6,
+      "nombre": "Quitamanchas",
+      "category": "Limpieza",
+      "precio": 3.99,
+     "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Quitamanchas potente que elimina manchas difíciles de diferentes superficies, dejándolas como nuevas."
+  },
+  {
+      "id": 7,
+      "nombre": "Lavandina",
+      "category": "Limpieza",
+      "precio": 2.99,
+ "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Lavandina que desinfecta y blanquea múltiples superficies, dejándolas libres de gérmenes."
+  },
+  {
+      "id": 8,
+      "nombre": "Desodorante para ambientes",
+      "category": "Limpieza",
+      "precio": 7.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desodorante en aerosol que elimina los malos olores y deja un aroma fresco en el ambiente."
+  },
+  {
+      "id": 9,
+      "nombre": "Limpiador de pisos",
+      "category": "Limpieza",
+      "precio": 6.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador concentrado para pisos que elimina la suciedad y deja una superficie limpia y brillante."
+  },
+  {
+      "id": 10,
+      "nombre": "Esponja de acero",
+      "category": "Limpieza",
+      "precio": 1.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Esponja de acero duradera que elimina la suciedad más adherida en utensilios de cocina y superficies metálicas."
+  },
+  {
+      "id": 11,
+      "nombre": "Líquido para lavar platos",
+      "category": "Jabón líquido",
+      "precio": 3.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Jabón líquido concentrado para lavar platos que elimina la grasa y deja tus platos relucientes."
+  },
+  {
+      "id": 12,
+      "nombre": "Desengrasante",
+      "category": "Limpieza",
+      "precio": 4.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desengrasante potente que elimina la grasa más difícil de diferentes superficies."
+  },
+  {
+      "id": 13,
+      "nombre": "Cepillo para inodoro",
+      "category": "Limpieza",
+      "precio": 5.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Cepillo ergonómico diseñado para limpiar eficazmente el interior del inodoro."
+  },
+  {
+      "id": 14,
+      "nombre": "Papel higiénico",
+      "category": "Limpieza",
+      "precio": 2.49,
+      "imagen": "https://ejemplo.com/papel_higienico.jpg",
+      "stock": 1000,
+      "description": "Papel higiénico suave y absorbente para satisfacer tus necesidades diarias de higiene."
+  },
+  {
+      "id": 15,
+      "nombre": "Desodorante para basura",
+      "category": "Limpieza",
+      "precio": 3.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desodorante en gel que neutraliza los malos olores en tu basurero, manteniendo un ambiente fresco."
+  },
+  {
+      "id": 16,
+      "nombre": "Limpiador de cocina",
+      "category": "Limpieza",
+      "precio": 4.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador especialmente formulado para eliminar la grasa y la suciedad de tus superficies de cocina."
+  },
+  {
+      "id": 17,
+      "nombre": "Toallas de papel",
+      "category": "Limpieza",
+      "precio": 1.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Toallas de papel absorbentes y resistentes, ideales para limpiar derrames y superficies."
+  },
+  {
+      "id": 18,
+      "nombre": "Escoba",
+      "category": "Limpieza",
+      "precio": 9.99,
+     "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Escoba resistente diseñada para barrer diferentes tipos de suelos con eficacia."
+  },
+  {
+      "id": 19,
+      "nombre": "Cubeta y trapeador",
+      "category": "Limpieza",
+      "precio": 12.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Cubeta y trapeador prácticos para la limpieza del hogar, facilitando la tarea de lavado de pisos."
+  },
+  {
+      "id": 20,
+      "nombre": "Jabón para lavar la ropa",
+      "category": "Jabón líquido",
+      "precio": 5.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Jabón líquido suave y eficaz para lavar la ropa, cuidando las fibras y manteniendo los colores."
+  },
+  {
+      "id": 21,
+      "nombre": "Detergente en polvo para ropa",
+      "category": "Limpieza",
+      "precio": 10.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente en polvo concentrado que proporciona una limpieza profunda y efectiva para tu ropa."
+  },
+  {
+      "id": 22,
+      "nombre": "Desodorante para alfombras",
+      "category": "Limpieza",
+      "precio": 8.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desodorante especialmente formulado para refrescar y eliminar los olores de tus alfombras."
+  },
+  {
+      "id": 23,
+      "nombre": "Limpia hornos",
+      "category": "Limpieza",
+      "precio": 6.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador potente diseñado para eliminar la grasa y la suciedad incrustada en hornos y parrillas."
+  },
+  {
+      "id": 24,
+      "nombre": "Detergente para ropa delicada",
+      "category": "Limpieza",
+      "precio": 7.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente suave y delicado que limpia y cuida tus prendas más delicadas."
+  },
+  {
+      "id": 25,
+      "nombre": "Blanqueador en gel",
+      "category": "Limpieza",
+      "precio": 4.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Blanqueador en gel que elimina manchas y proporciona una limpieza profunda en diversas superficies."
+  },
+  {
+      "id": 26,
+      "nombre": "Limpiador de plata",
+      "category": "Limpieza",
+      "precio": 5.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador especialmente formulado para devolver el brillo a tus objetos de plata."
+  },
+  {
+      "id": 27,
+      "nombre": "Limpiador de cristales",
+      "category": "Limpieza",
+      "precio": 4.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador que elimina manchas y deja tus cristales y espejos sin marcas ni manchas."
+  },
+  {
+      "id": 28,
+      "nombre": "Detergente líquido para ropa blanca",
+      "category": "Jabón líquido",
+      "precio": 9.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente líquido especialmente formulado para mantener la blancura de tu ropa."
+  },
+  {
+      "id": 29,
+      "nombre": "Desinfectante para manos",
+      "category": "Limpieza",
+      "precio": 3.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desinfectante en gel que limpia y desinfecta tus manos, proporcionando protección contra gérmenes."
+  },
+  {
+      "id": 30,
+      "nombre": "Abrillantador de acero inoxidable",
+      "category": "Limpieza",
+      "precio": 6.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Abrillantador que restaura el brillo y la apariencia de tus superficies de acero inoxidable."
+  },
+  {
+      "id": 31,
+      "nombre": "Limpiador de alfombras",
+      "category": "Limpieza",
+      "precio": 8.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador especialmente formulado para eliminar manchas y olores de tus alfombras."
+  },
+  {
+      "id": 32,
+      "nombre": "Desinfectante en spray",
+      "category": "Limpieza",
+      "precio": 5.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Desinfectante en aerosol que elimina gérmenes y proporciona una protección duradera."
+  },
+  {
+      "id": 33,
+      "nombre": "Cera para muebles",
+      "category": "Limpieza",
+      "precio": 7.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Cera que protege y da brillo a tus muebles de madera, proporcionando una protección duradera."
+  },
+  {
+      "id": 34,
+      "nombre": "Detergente para ropa de bebé",
+      "category": "Limpieza",
+      "precio": 11.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente suave y seguro especialmente formulado para lavar la ropa delicada de los bebés."
+  },
+  {
+      "id": 35,
+      "nombre": "Detergente para lana",
+      "category": "Limpieza",
+      "precio": 8.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Detergente suave diseñado para lavar y cuidar prendas de lana, manteniendo su suavidad y color."
+  },
+  {
+      "id": 36,
+      "nombre": "Limpiador de cuero",
+      "category": "Limpieza",
+      "precio": 6.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Limpiador que limpia y protege tus objetos de cuero, manteniéndolos en óptimas condiciones."
+  },
+  {
+      "id": 37,
+      "nombre": "Removedor de óxido",
+      "category": "Limpieza",
+      "precio": 4.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Removedor de óxido que elimina eficazmente el óxido de metales, dejándolos limpios y libres de corrosión."
+  },
+  {
+      "id": 38,
+      "nombre": "Abrillantador de madera",
+      "category": "Limpieza",
+      "precio": 9.49,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Abrillantador que realza el brillo natural de tus muebles de madera, protegiéndolos contra el desgaste."
+  },
+  {
+      "id": 39,
+      "nombre": "Lustramuebles",
+      "category": "Limpieza",
+      "precio": 5.99,
+      "imagen": "https://ejemplo.com/lustramuebles.jpg",
+      "stock": 1000,
+      "description": "Lustramuebles que limpia, abrillanta y protege tus muebles, dejándolos como nuevos."
+  },
+  {
+      "id": 40,
+      "nombre": "Jabón de lavar platos en barra",
+      "category": "Jabón sólido",
+      "precio": 2.99,
+      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
+      "stock": 1000,
+      "description": "Jabón sólido que elimina la grasa más difícil de tus utensilios de cocina, dejándolos limpios y relucientes."
+  }
+]
