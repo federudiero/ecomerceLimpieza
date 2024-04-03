@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "build/"
+
+[build.environment]
+  NODE_VERSION = "18.2.0"  # La versión de Node.js que estás utilizando
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "npm run start"
+  port = 3000  # El puerto en el que se ejecutará la aplicación en el entorno de desarrollo
+
+[build]
+  base = "build/"
+
+# Opcional: configuración adicional para entornos de producción
+# [context.production.environment]
+#   API_KEY = "tu_api_key"
+
+# Opcional: configuración adicional para entornos de desarrollo
+# [context.development.environment]
+#   API_KEY = "tu_api_key"
