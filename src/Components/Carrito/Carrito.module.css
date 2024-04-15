@@ -74,3 +74,114 @@ border: 2px solid black;
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+ 
+    .containerCart {
+        flex-direction: column; /* Cambia la dirección de flexión a columna en dispositivos móviles */
+        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+    }
+    .carritoCardContainer {
+        width: 100%; /* Ajusta el ancho al 100% */
+        padding: 20px; /* Reduce el relleno para evitar el desbordamiento */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 0; /* Elimina el margen superior */
+        margin-bottom: 0; /* Elimina el margen inferior */
+        margin-top: 100px;
+    }
+    .card {
+        width: 80%;
+        display: flex;
+        height: 220px;
+        flex-direction: column;
+        padding: 10px;/* Ajusta el ancho al 100% */
+    }
+    .textoCart {
+        display: flex;
+        color: aliceblue;
+        width: 550px;
+        height: 140px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        flex-direction: column; /* Permite que el texto se ajuste automáticamente */
+    }
+    .divContainerTotalLinks {
+        height: auto; /* Permite que la altura sea automática */
+        width: auto; /* Permite que el ancho sea automático */
+    }
+    .divLink {
+        margin-bottom: 20px; /* Añade un margen inferior para separar los enlaces */
+    }
+    .parrafoTotal {
+        font-size: 20px; /* Reduzca el tamaño de la fuente para adaptarse mejor a dispositivos móviles */
+    }
+   
+    
+  
+  }
+  
+  
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    
+    
+    .containerCart {
+        flex-direction: column; /* Cambia la dirección de flexión a columna en dispositivos móviles */
+        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+    }
+    .carritoCardContainer {
+        width: 100%; /* Ajusta el ancho al 100% */
+        padding: 20px; /* Reduce el relleno para evitar el desbordamiento */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 0; /* Elimina el margen superior */
+        margin-bottom: 0; /* Elimina el margen inferior */
+        margin-top: 100px;
+    }
+    .card {
+        width: 80%;
+        display: flex;
+        height: 220px;
+        flex-direction: column;
+        padding: 10px;/* Ajusta el ancho al 100% */
+    }
+    .textoCart {
+        display: flex;
+        color: aliceblue;
+        width: 550px;
+        height: 140px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        flex-direction: column; /* Permite que el texto se ajuste automáticamente */
+    }
+    .divContainerTotalLinks {
+        height: auto; /* Permite que la altura sea automática */
+        width: auto; /* Permite que el ancho sea automático */
+    }
+    .divLink {
+        margin-bottom: 20px; /* Añade un margen inferior para separar los enlaces */
+    }
+    .parrafoTotal {
+        font-size: 20px; /* Reduzca el tamaño de la fuente para adaptarse mejor a dispositivos móviles */
+    }
+   
+  }
+  
+  
+  
+  
+  @media only screen and (min-width: 991px) and (max-width: 1300px) {
+   
+    
+    
+  
+    
+  }
+  
