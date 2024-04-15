@@ -13,7 +13,7 @@ function Header() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${limpieza})`,
-          maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
+          maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)',
         }}
       ></div>
       <div className="hero-content text-center text-neutral-content">
