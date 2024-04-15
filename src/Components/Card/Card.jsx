@@ -6,6 +6,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { addToCart } from '../../redux/actions';
 
 function Card({ id, nombre, category, precio, imagen, stock }) {
+  console.log(id, nombre, category,precio, imagen, stock);
   const dispatch = useDispatch();
   const selectedProductQuantity = useSelector(state => state.selectedProductQuantity);
   const [count, setCount] = useState(selectedProductQuantity);
@@ -18,6 +19,7 @@ function Card({ id, nombre, category, precio, imagen, stock }) {
   const handleAddToCart = () => {
     const product = { id, nombre, category, precio, imagen, stock };
     dispatch(addToCart(product));
+    alert('Producto agregado al carrito');
   };
 
   return (

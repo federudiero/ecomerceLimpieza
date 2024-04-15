@@ -28,7 +28,21 @@ function Carrito() {
     return total;
   };
 
+  // Construir el mensaje de WhatsApp con los detalles del pedido
+  const buildWhatsAppMessage = () => {
+    let message = "¡Hola! Quiero realizar un pedido:\n";
+    cart.forEach(item => {
+      message += `${item.nombre}: ${cartCounts[item.id] || 1} x $${item.precio}\n`;
+    });
+    message += `Total de la compra: $${calculateTotal().toFixed(2)}`;
+    return encodeURIComponent(message); // Codificar para asegurar caracteres válidos en una URL
+  };
 
+  const handleConfirmOrder = () => {
+    const message = buildWhatsAppMessage();
+    const whatsappLink = `https://wa.me/3518120950?text=${message}`; //
+    window.open(whatsappLink, '_blank'); // Abre el enlace en una nueva ventana/tab
+  };
 
   useEffect(() => {
     // Guardar en el almacenamiento local cuando cambian los recuentos de los productos en el carrito
@@ -56,32 +70,20 @@ function Carrito() {
         </div>
       )}
      <div className={style.divContainerTotalLinks}>
-
         <p className={style.parrafoTotal}>Total: ${parseFloat(calculateTotal().toFixed(2))}</p>
-
-      <div className={style.divLink}>
-        
-       
-        <Link
-          to={`/`}
-          className="btn"
-          style={{ background: '#ffe600', color: 'black' }}
-        >
-          Agregar más productos
-        </Link>
-        <Link
-          to={`link whatsapp`}
-          className="btn"
-          style={{ background: '#25D366', color: 'black' }}
-        >
-          Confirmar compra
-        </Link>
-      </div>
-
-    
-
+        <div className={style.divLink}>
+          <Link
+            to={`/`}
+            className="btn"
+            style={{ background: '#ffe600', color: 'black' }}
+          >
+            Agregar más productos
+          </Link>
+          <button className="btn" onClick={handleConfirmOrder} style={{ background: '#25D366', color: 'black' }}>
+            Confirmar compra
+          </button>
+        </div>
      </div>
-     
     </div>
   );
 }

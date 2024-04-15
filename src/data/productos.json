@@ -1,13 +1,13 @@
 [
-  {
-      "id": 1,
-      "nombre": "Detergente líquido para ropa",
-      "category": "Jabón líquido",
-      "precio": 8.99,
-      "imagen": "https://rens.com.ar/wp-content/uploads/2020/11/Pack-ALA-LIQUIDO-5L-3-1-1-1.jpg",
-      "stock": 1000,
-      "description": "Detergente líquido especialmente formulado para limpiar y dejar tu ropa fresca y limpia."
-  },
+    {
+        "id": 1,
+        "nombre": "Detergente líquido para ropa",
+        "category": "Jabón líquido",
+        "precio": 8.99,
+        "imagen": "https://drive.google.com/file/d/1Zpb2fGfXae1dgzuzVeyTi3cEYWl2IW7g/view",
+        "stock": 1000,
+        "descripcion": "Detergente líquido especialmente formulado para limpiar y dejar tu ropa fresca y limpia."
+      },
   {
       "id": 2,
       "nombre": "Limpiavidrios",

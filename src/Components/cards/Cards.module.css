@@ -22,3 +22,54 @@
     background: rgb(255 255 255 / 78%) 42%; /* Utiliza un color más similar con una opacidad del 70% */
 
 }
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+ 
+    
+    .gridContainer {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Divide en tres columnas de igual ancho */
+        gap: 20px; /* Espacio entre las tarjetas */
+    }
+    
+   
+    
+  
+  }
+  
+  
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    
+    
+    .gridContainer {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Divide en tres columnas de igual ancho */
+        gap: 20px; /* Espacio entre las tarjetas */
+    }
+    
+    
+  }
+  
+  
+  
+  
+  @media only screen and (min-width: 991px) and (max-width: 1300px) {
+   
+    
+    
+    .gridContainer {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Divide en tres columnas de igual ancho */
+        gap: 20px; /* Espacio entre las tarjetas */
+    }
+    
+  }
+  
+  

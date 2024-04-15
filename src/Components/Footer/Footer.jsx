@@ -16,7 +16,7 @@ function Footer() {
          Nosotros
         </Link>
         <Link
-          to={`/nosotros`}
+          to={`/contacto`}
           
           className="btn btn-ghost text-xl"
         >

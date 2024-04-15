@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import style from '../cards/Cards.module.css';
 import ComponenteDescuento from '../componenteDescuento/ComponenteDescuento';
+import Filter from '../filter/Filter';
 
 function Cards() {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function Cards() {
     return (
         <div className={style.cardsContainerPadreMayor}>
             <ComponenteDescuento/> 
+            
             <div className={style.cardsContainer}>
                 <div className={style.gridContainer}>
                     {filteredBySearch.map(product => (

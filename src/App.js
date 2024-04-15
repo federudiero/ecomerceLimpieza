@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateCart } from './redux/actions';
 import Footer from './Components/Footer/Footer';
 import NosotrosView from './views/NosotrosView';
+import ContactoView from './views/ContactoView';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/product-detail/:productId" element={<DetailProductoId />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/nosotros" element={<NosotrosView />} />
+        <Route path="/contacto" element={<ContactoView />} />
       </Routes>
       <Footer/>
     </div>

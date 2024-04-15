@@ -1,5 +1,6 @@
 .divNosotros{
     display: flex;
+    height: 100vh;
 }
 .pNosotros{
 padding: 30px;

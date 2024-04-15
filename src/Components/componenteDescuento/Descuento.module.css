@@ -37,3 +37,48 @@
       transform: scale(1);
     }
   }
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 768px) {
+
+ 
+    .ContainerDescuentos {
+      display: none; /* Oculta el componente en dispositivos móviles */
+    }
+ 
+   
+    
+  
+  }
+  
+  
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    
+    
+    
+    .ContainerDescuentos {
+      display: none; /* Oculta el componente en dispositivos tabletas */
+    }
+    
+  }
+  
+  
+  
+  
+  @media only screen and (min-width: 991px) and (max-width: 1300px) {
+   
+    
+    
+  
+    
+  }
+  
+  
