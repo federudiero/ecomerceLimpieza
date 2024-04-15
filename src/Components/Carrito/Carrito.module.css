@@ -83,8 +83,10 @@ border: 2px solid black;
 
  
     .containerCart {
-        flex-direction: column; /* Cambia la dirección de flexión a columna en dispositivos móviles */
-        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        display: flex;
     }
     .carritoCardContainer {
         width: 100%; /* Ajusta el ancho al 100% */
@@ -94,6 +96,7 @@ border: 2px solid black;
         margin-top: 0; /* Elimina el margen superior */
         margin-bottom: 0; /* Elimina el margen inferior */
         margin-top: 100px;
+        height: 100vh;
     }
     .card {
         width: 80%;
@@ -132,8 +135,10 @@ border: 2px solid black;
     
     
     .containerCart {
-        flex-direction: column; /* Cambia la dirección de flexión a columna en dispositivos móviles */
-        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        display: flex;
     }
     .carritoCardContainer {
         width: 100%; /* Ajusta el ancho al 100% */
@@ -143,6 +148,7 @@ border: 2px solid black;
         margin-top: 0; /* Elimina el margen superior */
         margin-bottom: 0; /* Elimina el margen inferior */
         margin-top: 100px;
+        height: 100vh;
     }
     .card {
         width: 80%;
@@ -171,6 +177,7 @@ border: 2px solid black;
     .parrafoTotal {
         font-size: 20px; /* Reduzca el tamaño de la fuente para adaptarse mejor a dispositivos móviles */
     }
+   
    
   }
   

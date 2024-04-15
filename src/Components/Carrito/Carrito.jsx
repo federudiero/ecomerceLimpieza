@@ -51,6 +51,7 @@ function Carrito() {
 
   return (
     <div className={style.containerCart}>
+     
       {cart.length === 0 ? (
         <p>No hay productos en el carrito</p>
       ) : (
