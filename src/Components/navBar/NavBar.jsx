@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
@@ -8,6 +8,12 @@ import Filter from '../filter/Filter';
 function NavBar() {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    // Cerrar el menú cuando cambie la ubicación
+    setShowMenu(false);
+  }, [location]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -42,7 +48,7 @@ function NavBar() {
               Contacto
             </Link>
             <div className="md:hidden">
-              <Filter onClick={handleLinkClick} />
+              {isHomePage && <Filter onClick={handleLinkClick} />} {/* Renderiza el filtro solo en la página de inicio */}
             </div>
           </>
           
@@ -56,7 +62,7 @@ function NavBar() {
                 Contacto
               </Link>
             </div>
-            {location.pathname === '/' && (
+            {isHomePage && ( // Renderiza el filtro solo en la página de inicio
               <div className="flex-none md:block hidden">
                 <Filter />
               </div>
