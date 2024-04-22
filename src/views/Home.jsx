@@ -5,6 +5,7 @@ import Cards from '../Components/cards/Cards'
 import Filter from '../Components/filter/Filter'
 import NavBar from '../Components/navBar/NavBar'
 import Footer from '../Components/Footer/Footer'
+import ComoTrabajo from '../Components/comoTrabajo/ComoTrabajo'
 
 
 
@@ -13,7 +14,7 @@ function Home() {
     <div>
    
       <Header/>
-      
+      <ComoTrabajo/>
       <Cards/>
      
     </div>

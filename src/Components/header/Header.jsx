@@ -19,7 +19,7 @@ function Header() {
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md mx-auto"> {/* mx-auto para centrar el contenido */}
           <h1 className="mb-5 text-5xl font-bold text-white">Limpiar es más fácil con nosotros</h1>
-          <p className="mb-5 text-white font-semibold text-xl">Encontrá la mayor variedad de productos y marcas, ¿qué esperás para ver el catálogo?</p>
+          <p className="mb-5 text-white font-semibold text-xl">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
         </div>
       </div>
     </div>

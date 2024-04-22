@@ -47,6 +47,7 @@ const Filter = () => {
     return (
         <div className={style.filtercontainer}>
             <CategoryIcon/>
+                    <h3>categorias</h3>
             <div>
                 <select className={style.buttonSelect} defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
                     <option className={style.options} value="All">Todos los productos</option>

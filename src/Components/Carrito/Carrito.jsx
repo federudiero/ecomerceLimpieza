@@ -80,7 +80,7 @@ function Carrito() {
           >
             Agregar más productos
           </Link>
-          <button className="btn" onClick={handleConfirmOrder} style={{ background: '#25D366', color: 'black' }}>
+          <button className="btn" onClick={handleConfirmOrder} style={{ background: '#099a3f', color: 'black' }}>
             Confirmar compra
           </button>
         </div>

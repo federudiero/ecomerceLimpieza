@@ -1,0 +1,50 @@
+.divComoTrabajo {
+    /* Estilos para el contenedor principal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:500px;
+    justify-content: space-evenly;
+    background-color: #cdcfd0;
+    color: #1d1d1d;
+
+  }
+  
+  .h2ComoTrabajo {
+    /* Estilos para los títulos h2 */
+    align-items: center;
+   
+    font-size: 23px;
+  }
+  
+  .divComoTrabajoHijo {
+    /* Estilos para el contenedor de los elementos secundarios */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .divComoTrabajon_hijomenor {
+    /* Estilos para los contenedores secundarios individuales */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+   
+  }
+  
+  .imgComoTrabajo {
+    /* Estilos para las imágenes */
+  }
+  
+  .pComoTrabajo {
+    /* Estilos para los párrafos */
+  text-align: center;
+    width: 270px;
+
+    
+    
+  }
+  
