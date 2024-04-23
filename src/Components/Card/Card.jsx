@@ -19,7 +19,7 @@ function Card({ id, nombre, category, precio, imagen, stock }) {
   };
 
   return (
-    <div className="dark card w-56 bg-gray-800 shadow-md m-2 flex flex-col">
+    <div className="dark card w-56 bg-gray-900 shadow-md m-2 flex flex-col">
       <div className="w-full h-44 overflow-hidden flex items-center justify-center border-primary">
         <img className="w-full h-full object-cover" src={imagen} alt="Producto" />
       </div>
