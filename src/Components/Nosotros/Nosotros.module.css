@@ -1,11 +1,14 @@
 .divNosotros{
     display: flex;
     height: 100vh;
+    background-color: #ffffffc7;
+    align-items: center;
 }
 .pNosotros{
 padding: 30px;
 text-align: justify;
 font-size: 17px;
+color: black;
 }
 .divh2Nosotros{
 margin-top: 100px;
@@ -19,11 +22,11 @@ margin-top: 100px;
     padding-left: 30px;
     text-align: justify;
     font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajusta los valores según tu preferencia */
+    color: black;
+    
   }
   
 .imgNosotros {
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
-
+    
   }
   

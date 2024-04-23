@@ -39,7 +39,7 @@ function Card({ id, nombre, category, precio, imagen, stock }) {
         to={`/product-detail/${id}`}
         className="btn"
         onClick={handleViewDetails}
-        style={{ background: '#ffe600', color: 'black' }}
+        style={{ background: '#0082be', color: 'black',marginBottom: '10px' }}
       >
         Ver detalle
       </Link>

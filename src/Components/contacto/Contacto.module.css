@@ -3,6 +3,8 @@
     justify-content: space-evenly;
     align-items: center;
     height: 100vh;
+    background-color: #ffffffc7;
+    color: #000000;
 }
 .formContacto{
     padding: 20px;
@@ -10,6 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    background-color: #647f8069;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   
 
 }
@@ -19,9 +24,11 @@
     text-decoration: underline;
 }
 .textArea{
-    width: 400px;
+    width: 400px; 
     height: 200px;
     border: 1px solid #ffe600;
+    background-color: antiquewhite;
+    resize: none;
 }
 .btnContacto{
     margin-top: 10px;
@@ -46,4 +53,5 @@
 }
 .inputContacto{
     border: 1px solid #ffe600;
+    background-color: antiquewhite;
 }

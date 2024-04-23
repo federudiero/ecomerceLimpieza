@@ -26,7 +26,7 @@ function ProductDetail( ) {
   return (
     <div className="flex justify-center items-center min-h-screen bg-success-content">
       {selectedProduct ? (
-        <div className="flex flex-col lg:flex-row bg-base-100 shadow-xl rounded-lg overflow-hidden max-w-screen-lg mx-4">
+        <div className="flex flex-col lg:flex-row bg-base-200 shadow-xl rounded-lg overflow-hidden max-w-screen-lg mx-4">
           <div className="w-full h-56 overflow-hidden flex items-center justify-center border-primary">
             <img className="w-full h-full object-cover" src={selectedProduct.imagen} alt="Producto" />
           </div>

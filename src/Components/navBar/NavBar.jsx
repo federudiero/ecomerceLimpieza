@@ -53,7 +53,7 @@ function NavBar() {
           </>
         ) : (
           <>
-            <div className="md:flex md:items-center md:justify-between">
+            <div className="md:flex md:items-center md:space-evenly">
               <Link to="/nosotros" className="btn btn-ghost text-xl">
                 Nosotros
               </Link>
