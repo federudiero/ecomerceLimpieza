@@ -4,10 +4,7 @@ import { dataJson } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import style from '../cards/Cards.module.css';
-import ComponenteDescuento from '../componenteDescuento/ComponenteDescuento';
 
-import ComoTrabajo from '../comoTrabajo/ComoTrabajo';
-import Carousel from '../carousel/Carousel';
 
 function Cards() {
     const dispatch = useDispatch();
@@ -35,9 +32,7 @@ function Cards() {
     return (
         <div className={style.cardsContainerPadreMayor}>
 
-      <ComoTrabajo/>
-      <Carousel/>
-            <ComponenteDescuento/> 
+     
        
             <div className={style.cardsContainer}>
                 <div className={style.gridContainer}>

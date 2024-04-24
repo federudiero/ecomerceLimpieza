@@ -1,61 +1,55 @@
+/* Estilos específicos para el filtro */
 .filtercontainer {
-   
     display: flex;
     height: 46px;
-    top: 70%;
     background-color: transparent;
     padding: 10px;
-   
     border-radius: 5px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-   
-   
-    border-radius: 0.375rem;
-}
-/* Otros estilos */
-.buttonSelect {
+  }
+  
+  /* Estilos para los botones y el select */
+  .buttonSelect,
+  .buttonResete {
     cursor: pointer;
+    padding: 3px;
+    border-radius: 0.375rem;
     background-color: transparent;
-    /* Color de borde similar al de la barra de búsqueda */
-    border-radius: 0.375rem;
-    /* Estilos del select */
-}
-
-.buttonResete {
-    /* Estilos del botón */
-   /* Color de borde similar al de la barra de búsqueda */
-    border-radius: 0.375rem;
-    padding: 3px;
-
-}
-.buttonResete:hover {
-    /* Estilos del botón */
-    /* Color de borde similar al de la barra de búsqueda */
-    border-radius: 0.375rem;
-    padding: 3px;
+    color: #fff; /* Cambiamos el color del texto */
+    border: 1px solid #fff; /* Añadimos un borde blanco */
+  }
+  
+  .buttonResete:hover {
     color: rgb(172, 36, 36);
-
-}
-.options{
+  }
+  
+  .options {
     background-color: rgb(46, 45, 45);
     border: none;
     color: #959596;
     cursor: pointer;
-    
-}
-
-
-
+  }
   
-
-@media only screen and (max-width: 768px) {
-
-    .filtercontainer {
-        display: flex; /* Muestra el contenedor de filtros en dispositivos móviles */
-        height: auto; /* Altura automática para adaptarse al contenido */
+  /* Estilos para el ícono de categoría */
+  .filtercontainer svg {
+    fill: #fff; /* Cambiamos el color del ícono */
+  }
+  
+  /* Estilos para el input de búsqueda */
+  .input {
+    padding: 6px;
+    border-radius: 0.375rem;
+    border: 1px solid #fff; /* Añadimos un borde blanco */
+    background-color: transparent;
+    color: #fff; /* Cambiamos el color del texto */
+  }
+  @media only screen and (max-width: 768px) {
+    .containerNavBar {
+        display: flex;
+        height: 46px;
         background-color: transparent;
         padding: 10px;
         border-radius: 5px;
@@ -63,50 +57,6 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-       
-      }
     
-   
-    
-  
-  }
-  
-  
-  @media only screen and (min-width: 769px) and (max-width: 991px) {
-    
-    
-   
-   
-  }
-  
-  
-  
-  
-  @media only screen and (min-width: 991px) and (max-width: 1300px) {
-   
-    
-    
-  
-    
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    }
+    }

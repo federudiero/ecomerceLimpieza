@@ -1,99 +1,36 @@
+/* Estilos generales del NavBar */
 .containerNavBar {
-   
   position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    background: rgb(29, 29, 29);
-    align-content: flex-end;
-    height: 80px;
-    justify-content: center;
-    color: antiquewhite;
-    
-  }
-  .menu{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(29, 29, 29);
+  color: antiquewhite;
+}
 
+.menu {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
 
-
-  
-
+/* Media Query para pantallas pequeñas */
 @media only screen and (max-width: 768px) {
-
- 
-  .containerNavBar {
-   
-    position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
+  
+    .containerNavBar {
       display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      background: rgb(29, 29, 29);
-      align-content: flex-end;
-      height: 250px;
-      justify-content: center;
-      color: antiquewhite;
-      
-    }
-    .menu{
-      display: flex;
-      flex-direction: column;
+      height: 46px;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 5px;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      justify-content: space-evenly;
+      gap: 20px;
     }
   
-  
- 
-  
-
 }
-
-
-@media only screen and (min-width: 769px) and (max-width: 991px) {
-  
-  
- 
- 
-}
-
-
-
-
-@media only screen and (min-width: 991px) and (max-width: 1300px) {
- 
-  
-  
-
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
