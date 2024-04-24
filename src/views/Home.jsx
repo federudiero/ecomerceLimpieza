@@ -5,12 +5,13 @@ import Filter from '../Components/filter/Filter';
 import ComponenteDescuento from '../Components/componenteDescuento/ComponenteDescuento';
 import ComoTrabajo from '../Components/comoTrabajo/ComoTrabajo';
 import Carousel from '../Components/carousel/Carousel';
+import style from '../views/Home.module.css';
 
 function Home() {
   return (
     <div>
       <Header />
-      <div className="bg-gradient-to-b from-gray-100 to-transparent min-h-screen flex flex-col items-center justify-center">
+      <div className={style.containerHeader}>
         {/* Utiliza las clases de Tailwind CSS para centrar vertical y horizontalmente */}
         <div className="flex flex-col items-center justify-center space-y-12 mt-12">
           {/* Añade el espacio entre los componentes con space-y-12 */}
