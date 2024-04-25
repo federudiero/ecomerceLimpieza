@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  position: fixed; /* Agregado para fijar la posición */
+
 }
   /* Estilos para los botones y el select */
   .buttonSelect,
