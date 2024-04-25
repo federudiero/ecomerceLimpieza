@@ -1,5 +1,3 @@
-// tailwind.config.js
-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -10,7 +8,7 @@ module.exports = {
         dark: {
           bg: '#1a1a1a',
           text: '#ffffff',
-          // Añade más colores si es necesario
+          // Agrega más colores oscuros si es necesario
         },
       },
     },
@@ -22,5 +20,7 @@ module.exports = {
     },
   },
   darkMode: 'class', // Habilita el modo oscuro basado en clases
-  plugins:[require("daisyui")],
-}
+  plugins: [
+    require('daisyui')
+  ],
+};
