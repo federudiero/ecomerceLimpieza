@@ -10,11 +10,8 @@ function Header() {
   return (
     <div className="hero min-h-screen relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${limpieza})`,
-          maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)',
-        }}
+        className={style.headerContainerimgbg}
+        
       ></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md mx-auto"> {/* mx-auto para centrar el contenido */}
