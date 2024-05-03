@@ -1,4 +1,3 @@
-// Cards.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions';
@@ -32,18 +31,14 @@ function Cards() {
       <div className={style.cardsContainer}>
         <div className={style.gridContainer}>
           {filteredBySearch.map(product => (
-            
-           console.log(product),
             <Card
               key={product.id}
               nombre={product.nombre}
               category={product.category}
               precio={product.precio}
-             
               url={product.url}
               id={product.id}
             />
-           
           ))}
         </div>
       </div>

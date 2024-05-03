@@ -8,9 +8,9 @@ function ProductDetail() {
   const { productId } = useParams(); // Obtener el productId de los parámetros de la URL
   const dispatch = useDispatch();
   const products = useSelector(state => state.productos); // Obtener la lista de productos del estado Redux
-console.log(products);
+
   // Buscar el producto seleccionado por su ID
-  const selectedProduct = products.find(product => product.id == productId);
+  const selectedProduct = products.find(product => product.id === productId);
 
   // Manejar la acción de agregar al carrito
   const handleAddToCart = () => {

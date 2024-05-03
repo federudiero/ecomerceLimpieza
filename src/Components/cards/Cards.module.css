@@ -1,7 +1,7 @@
 .cardsContainer {
     display: flex;
     justify-content: center;
-   
+    
    
 }
 
@@ -20,6 +20,7 @@
     flex-direction: column;
     align-items: center;
     background: rgb(255 255 255 / 78%) 42%; /* Utiliza un color más similar con una opacidad del 70% */
+    border-top : 3px solid #0082be;
 
 }
 

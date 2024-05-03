@@ -7,12 +7,13 @@ import EditIcon from '@mui/icons-material/Edit';
 function FormularioCargaProducto() {
   const [archivoUrl, setArchivoUrl] = useState('');
   const [docus, setDocus] = useState([]);
-  const [editingProductId, setEditingProductId] = useState(null); // Estado para manejar la edición de producto
+  const [editingProductId, setEditingProductId] = useState(null); 
   const [formData, setFormData] = useState({
     nombre: '',
     category: '',
     precio: ''
   });
+  const [filtroCategoria, setFiltroCategoria] = useState('');
 
   const archivoHandler = async (e) => {
     const archivo = e.target.files[0];
@@ -34,7 +35,6 @@ function FormularioCargaProducto() {
 
     try {
       if (editingProductId) {
-        // Si existe editingProductId, actualizamos el producto existente
         await db.collection('productos').doc(editingProductId).update({
           nombre: nombre,
           category: category,
@@ -42,9 +42,8 @@ function FormularioCargaProducto() {
           url: archivoUrl
         });
         alert('Producto actualizado correctamente.');
-        setEditingProductId(null); // Limpiar el estado de edición
+        setEditingProductId(null);
       } else {
-        // Si no hay editingProductId, agregamos un nuevo producto
         await db.collection('productos').add({
           nombre: nombre,
           category: category,
@@ -53,7 +52,6 @@ function FormularioCargaProducto() {
         });
         alert('Producto agregado correctamente.');
       }
-      // Limpiar el formulario después de enviar
       setFormData({
         nombre: '',
         category: '',
@@ -88,6 +86,21 @@ function FormularioCargaProducto() {
     setArchivoUrl(producto.url);
   };
 
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const filtrarProductosPorCategoria = (categoria) => {
+    if (categoria === '') {
+      return docus; 
+    } else {
+      return docus.filter((producto) => producto.category === categoria);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -102,12 +115,7 @@ function FormularioCargaProducto() {
     fetchData();
   }, []);
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const productosFiltrados = filtrarProductosPorCategoria(filtroCategoria);
 
   return (
     <div className={style.containerForm}>
@@ -137,26 +145,42 @@ function FormularioCargaProducto() {
         <button type="submit">{editingProductId ? 'Actualizar' : 'Enviar'}</button>
       </form>
 
-      {/* Mostrar lista de productos */}
-      <div >
-       
+      <div>
+        <div className={style.filtrar}>
+
+        <select
+          value={filtroCategoria}
+          onChange={(e) => setFiltroCategoria(e.target.value)}
+        >
+          <option value="">Todos</option>
+          {Array.from(new Set(docus.map((producto) => producto.category))).map(
+            (categoria) => (
+              <option key={categoria} value={categoria}>
+                {categoria}
+              </option>
+            )
+          )}
+        </select>
+
+        </div>
+
         <ul className={style.listaProductos}>
-          {docus.map((producto) => (
-           
+          {productosFiltrados.map((producto) => (
             <li className={style.producto} key={producto.id}>
-               <img className={style.imagen} src={producto.url} alt={producto.nombre} width="100" />
-              <strong>{producto.nombre}</strong> 
-              <strong>{producto.category}</strong> 
-              <strong>${producto.precio}</strong> 
+              <img className={style.imagen} src={producto.url} alt={producto.nombre} width="100" />
+              <strong>{producto.nombre}</strong>
+              <strong>{producto.category}</strong>
+              <strong>${producto.precio}</strong>
               <br />
               <div className={style.buttons}>
-
-
-              <button onClick={() => eliminarProducto(producto.id)}><DeleteForeverIcon /></button>
-              <button onClick={() => editarProducto(producto)}><EditIcon/></button>
+                <button onClick={() => eliminarProducto(producto.id)}>
+                  <DeleteForeverIcon />
+                </button>
+                <button onClick={() => editarProducto(producto)}>
+                  <EditIcon />
+                </button>
               </div>
             </li>
-           
           ))}
         </ul>
       </div>

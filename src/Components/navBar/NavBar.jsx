@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
  import HomeIcon from '@mui/icons-material/Home';
  import LocalMallIcon from '@mui/icons-material/LocalMall';
+
 import style from './NavBar.module.css';
 
 function NavBar() {
@@ -21,6 +22,7 @@ function NavBar() {
         <Link to="/carrito" className="btn" style={{ background: '#ffe600', color: 'black' }}>
           <LocalMallIcon />
         </Link>
+       
       </div>
      
     </div>

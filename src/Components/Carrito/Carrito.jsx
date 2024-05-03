@@ -58,14 +58,14 @@ function Carrito() {
         <div className={style.carritoCardContainer}>
           {cart.map(item => (
             <div className={style.card} key={item.id}>
+        
               <img className={style.imageCart} src={item.url} alt={item.nombre} />
-              <div className={style.textoCart}>
                 <h3>{item.nombre}</h3>
-                <p>Precio: ${item.precio}</p>
+                <p>Precio por unidad: ${item.precio}</p>
                 <Count initialValue={cartCounts[item.id] || 1} onCountChange={(count) => handleCountChange(item.id, count)} />
                 <p>Total: ${parseFloat((item.precio * (cartCounts[item.id] || 1)).toFixed(2))}</p>
                 <button onClick={() => handleRemoveFromCart(item.id)}><DeleteOutlineIcon /></button>
-              </div>
+            
             </div>
           ))}
         </div>
@@ -80,7 +80,7 @@ function Carrito() {
           >
             Agregar más productos
           </Link>
-          <button className="btn" onClick={handleConfirmOrder} style={{ background: '#099a3f', color: 'black' }}>
+          <button className="btn" onClick={handleConfirmOrder} style={{ background: '#0082be', color: 'black' }}>
             Confirmar compra
           </button>
         </div>

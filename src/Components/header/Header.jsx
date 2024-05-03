@@ -8,7 +8,7 @@ function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className="hero min-h-screen relative overflow-hidden">
+    <div className="hero min-h-screen relative overflow-hidden border-b-2 border-blue-500 ">
       <div
         className={style.headerContainerimgbg}
         

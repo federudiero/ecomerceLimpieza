@@ -13,7 +13,7 @@ function Home() {
       <Header />
       <div className={style.containerHeader}>
         {/* Utiliza las clases de Tailwind CSS para centrar vertical y horizontalmente */}
-        <div className="flex flex-col items-center justify-center space-y-12 mt-12">
+        <div className="flex flex-col items-center justify-center space-y-12 mt-12 ">
           {/* Añade el espacio entre los componentes con space-y-12 */}
           <ComoTrabajo />
           <ComponenteDescuento />
