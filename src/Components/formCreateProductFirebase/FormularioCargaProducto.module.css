@@ -13,15 +13,14 @@
  
 }
 
-.listaProductos{
-  
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-     
-}
+.listaProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Simplifica la definición del espacio entre columnas y filas */
+    max-height: 700px; /* Establece la altura máxima del contenedor */
+    overflow-y: auto; /* Habilita el desplazamiento vertical cuando el contenido excede la altura máxima */
+    margin-bottom: 100px;
+  }
 .producto{
     display: flex;
     flex-direction: column;

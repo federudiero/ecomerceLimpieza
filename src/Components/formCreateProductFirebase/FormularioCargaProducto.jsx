@@ -3,6 +3,7 @@ import { app, db } from '../../firebase/Firebase';
 import style from './FormularioCargaProducto.module.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import { capitalize } from 'lodash'; // Importa la función capitalize de lodash
 
 function FormularioCargaProducto() {
   const [archivoUrl, setArchivoUrl] = useState('');
@@ -11,7 +12,8 @@ function FormularioCargaProducto() {
   const [formData, setFormData] = useState({
     nombre: '',
     category: '',
-    precio: ''
+    precio: '',
+    descripcion: ''
   });
   const [filtroCategoria, setFiltroCategoria] = useState('');
 
@@ -26,9 +28,13 @@ function FormularioCargaProducto() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const { nombre, category, precio } = formData;
+    let { nombre, category, precio, descripcion } = formData;
 
-    if (!nombre || !archivoUrl || !category || isNaN(precio)) {
+    // Capitaliza la primera letra de nombre y category
+    nombre = capitalize(nombre);
+    category = capitalize(category);
+
+    if (!nombre || !archivoUrl || !category || isNaN(precio) || !descripcion) {
       alert('Por favor, completa todos los campos correctamente.');
       return;
     }
@@ -36,28 +42,33 @@ function FormularioCargaProducto() {
     try {
       if (editingProductId) {
         await db.collection('productos').doc(editingProductId).update({
-          nombre: nombre,
-          category: category,
+          nombre,
+          category,
           precio: parseFloat(precio),
+          descripcion,
           url: archivoUrl
         });
         alert('Producto actualizado correctamente.');
         setEditingProductId(null);
       } else {
         await db.collection('productos').add({
-          nombre: nombre,
-          category: category,
+          nombre,
+          category,
           precio: parseFloat(precio),
+          descripcion,
           url: archivoUrl
         });
         alert('Producto agregado correctamente.');
       }
+
       setFormData({
         nombre: '',
         category: '',
-        precio: ''
+        precio: '',
+        descripcion: ''
       });
       setArchivoUrl('');
+
     } catch (error) {
       console.error('Error al guardar el producto:', error);
       alert('Hubo un problema al guardar el producto.');
@@ -81,15 +92,17 @@ function FormularioCargaProducto() {
     setFormData({
       nombre: producto.nombre,
       category: producto.category,
-      precio: producto.precio.toString()
+      precio: producto.precio.toString(),
+      descripcion: producto.descripcion || ''
     });
     setArchivoUrl(producto.url);
   };
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
   };
 
@@ -142,26 +155,30 @@ function FormularioCargaProducto() {
           value={formData.precio}
           onChange={handleInputChange}
         />
+        <textarea
+          name="descripcion"
+          placeholder="Descripción del Producto"
+          value={formData.descripcion}
+          onChange={handleInputChange}
+        />
         <button type="submit">{editingProductId ? 'Actualizar' : 'Enviar'}</button>
       </form>
 
       <div>
         <div className={style.filtrar}>
-
-        <select
-          value={filtroCategoria}
-          onChange={(e) => setFiltroCategoria(e.target.value)}
-        >
-          <option value="">Todos</option>
-          {Array.from(new Set(docus.map((producto) => producto.category))).map(
-            (categoria) => (
-              <option key={categoria} value={categoria}>
-                {categoria}
-              </option>
-            )
-          )}
-        </select>
-
+          <select
+            value={filtroCategoria}
+            onChange={(e) => setFiltroCategoria(e.target.value)}
+          >
+            <option value="">Todos</option>
+            {Array.from(new Set(docus.map((producto) => producto.category))).map(
+              (categoria) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              )
+            )}
+          </select>
         </div>
 
         <ul className={style.listaProductos}>
@@ -171,6 +188,7 @@ function FormularioCargaProducto() {
               <strong>{producto.nombre}</strong>
               <strong>{producto.category}</strong>
               <strong>${producto.precio}</strong>
+             
               <br />
               <div className={style.buttons}>
                 <button onClick={() => eliminarProducto(producto.id)}>

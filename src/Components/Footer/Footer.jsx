@@ -55,7 +55,7 @@ function Footer() {
 
       <aside className={style.asideContainer}>
         <p className={style.p}>
-          Copyright © 2024 - All right reserved by Developer- <CodeIcon /> / Federico Rudiero / <CodeIcon />  
+          Copyright © 2024 - All right reserved by Developer- Federico Rudiero  <CodeIcon />  
         </p>
           <Link
           to="#"
