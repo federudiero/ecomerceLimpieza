@@ -46,16 +46,16 @@
     color: #fff; /* Cambiamos el color del texto */
   }
   @media only screen and (max-width: 768px) {
-    .containerNavBar {
-        display: flex;
-        height: 46px;
-        background-color: transparent;
-        padding: 10px;
-        border-radius: 5px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
+    .filtercontainer {
+      display: flex;
+      height: 46px;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 5px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     
     }
     }

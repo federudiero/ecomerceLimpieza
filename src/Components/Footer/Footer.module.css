@@ -1,0 +1,53 @@
+/* Footer Container */
+.footerContainer {
+    padding: 20px; /* Ajusta el espaciado interno del footer */
+    background-color: #3c3c3c; /* Color de fondo */
+    color: #e5e5e5; /* Color del texto */
+    border-radius: 10px; /* Borde redondeado */
+  }
+  
+  /* Contenedor de la barra de navegación */
+  .navContainer {
+    display: flex;
+    justify-content: space-evenly; /* Distribuye uniformemente los elementos */
+    margin-bottom: 10px; /* Margen inferior */
+  }
+  
+  /* Estilos para los enlaces de navegación */
+  .btn {
+    text-decoration: none;
+    padding: 10px 20px; /* Ajusta el relleno */
+    border: 1px solid #374151; /* Borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    color: #ebe8e8; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+  }
+  
+  .btn:hover {
+    background-color: #374151; /* Cambia el color de fondo al pasar el ratón */
+    color: #ffffff; /* Cambia el color del texto al pasar el ratón */
+  }
+  
+  /* Estilos para los íconos de redes sociales */
+  .a {
+    color: #e1e1e1; /* Color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    margin-right: 10px; /* Margen derecho */
+  }
+  
+  /* Estilos para el texto de copyright */
+  .asideContainer {
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 14px; /* Tamaño de fuente */
+  }
+  
+  /* Estilos adicionales para el párrafo */
+  .p {
+    margin: 0; /* Elimina el margen */
+  }
+  
+  /* Estilos para el icono de código */
+  .CodeIcon {
+    vertical-align: middle; /* Alinea verticalmente el icono */
+  }

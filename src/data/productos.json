@@ -4,7 +4,7 @@
         "nombre": "Detergente líquido para ropa",
         "category": "Jabón líquido",
         "precio": 8.99,
-        "imagen": "https://drive.google.com/file/d/1Zpb2fGfXae1dgzuzVeyTi3cEYWl2IW7g/view",
+        "imagen":"../../img/jabonliquido-suavizante-quitamachas-perfumeRopa.png",
         "stock": 1000,
         "descripcion": "Detergente líquido especialmente formulado para limpiar y dejar tu ropa fresca y limpia."
       },

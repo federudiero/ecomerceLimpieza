@@ -1,20 +1,34 @@
 import { DATA_JSON, FILTER_BY_CATEGORY, FILTER_BY_PRICE_RANGE, RESET_FILTERS,VIEW_PRODUCT_DETAILS ,SET_SELECTED_PRODUCT_ID,UPDATE_PRODUCT_QUANTITY ,ADD_TO_CART ,UPDATE_CART,REMOVE_CART,UPDATE_CART_COUNT,SEARCH_BY_NAME} from '../redux/actionsType';
 
 import productosJson from '../data/productos.json'; // Importa el archivo JSON
+import { collection, getDocs } from 'firebase/firestore';
+import {  db } from '../firebase/Firebase';
 
-export const dataJson = () => {
-    return async (dispatch) => {
-        try {
-            // Usa los datos directamente del archivo JSON
-            return dispatch({
-                type: DATA_JSON,
-                payload: productosJson,
-            });
-        } catch (error) {
-            console.error(error.message);
-        }
+export const loadProducts = () => {
+  return async (dispatch) => {
+    try {
+      const productsCollection = collection(db, 'productos'); // Nombre de la colección en Firestore
+      const querySnapshot = await getDocs(productsCollection);
+
+      const products = [];
+      querySnapshot.forEach((doc) => {
+        // Construye el objeto de producto desde los datos del documento Firestore
+        const product = {
+          id: doc.id,
+          ...doc.data()
+        };
+        products.push(product);
+      });
+
+      dispatch({
+        type: DATA_JSON,
+        payload: products
+      });
+    } catch (error) {
+      console.error('Error al cargar productos desde Firestore:', error);
     }
-}
+  };
+};
 export const filterByCategory = (category) => {
     return {
         type: FILTER_BY_CATEGORY,

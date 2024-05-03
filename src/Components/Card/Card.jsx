@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { setSelectedProductId, addToCart } from '../../redux/actions'; 
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-function Card({ id, nombre, category, precio, imagen, stock }) {
+function Card({ id, nombre, category, precio, url }) {
   const dispatch = useDispatch();
   const selectedProductQuantity = useSelector(state => state.selectedProductQuantity);
 
@@ -13,7 +13,7 @@ function Card({ id, nombre, category, precio, imagen, stock }) {
   };
 
   const handleAddToCart = () => {
-    const product = { id, nombre, category, precio, imagen, stock };
+    const product = { id, nombre, category, precio, url };
     dispatch(addToCart(product));
     alert('Producto agregado al carrito');
   };
@@ -21,7 +21,7 @@ function Card({ id, nombre, category, precio, imagen, stock }) {
   return (
     <div className="dark card w-56 bg-gray-900 shadow-md m-2 flex flex-col">
       <div className="w-full h-44 overflow-hidden flex items-center justify-center border-primary">
-        <img className="w-full h-full object-cover" src={imagen} alt="Producto" />
+        <img className="w-full h-full object-cover" src={url} alt="Producto" />
       </div>
       <div className="card-body" style={{
         display: 'flex',

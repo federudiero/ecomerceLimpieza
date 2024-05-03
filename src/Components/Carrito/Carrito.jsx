@@ -58,7 +58,7 @@ function Carrito() {
         <div className={style.carritoCardContainer}>
           {cart.map(item => (
             <div className={style.card} key={item.id}>
-              <img className={style.imageCart} src={item.imagen} alt={item.nombre} />
+              <img className={style.imageCart} src={item.url} alt={item.nombre} />
               <div className={style.textoCart}>
                 <h3>{item.nombre}</h3>
                 <p>Precio: ${item.precio}</p>

@@ -9,6 +9,7 @@ import { updateCart } from './redux/actions';
 import Footer from './Components/Footer/Footer';
 import NosotrosView from './views/NosotrosView';
 import ContactoView from './views/ContactoView';
+import FormularioFirebaseView from './views/FormularioFirebaseView';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/nosotros" element={<NosotrosView />} />
         <Route path="/contacto" element={<ContactoView />} />
+        <Route path="/formulario" element={<FormularioFirebaseView />} />
       </Routes>
       <Footer/>
     </div>
