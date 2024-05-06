@@ -1,23 +1,29 @@
 
 .containerCart{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     background: rgb(140,139,139);
     background: linear-gradient(184deg, rgba(140,139,139,1) 0%, rgba(195,195,196,1) 42%, rgba(221,249,255,1) 100%);
     justify-content: space-evenly;
+    height: 100vh;
     
 }
 
 
 .carritoCardContainer{
     
-    display: grid;
-    margin-top:100px ;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 520px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Hacer que el contenido sea desplazable verticalmente */
+    padding-right: 10px;
+    padding-bottom:100px ;
+    padding-top: 50px;
+    
+   
+    
 
  
    
@@ -31,15 +37,15 @@ border-radius: 50%;
 }
 .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 15px;
     color: black;
-    height: 300px;
-    width: 210px;
+    height: 150px;
+    width:610px;
     border-radius: 20px;
     justify-content: center;
-    background: #ebebebba;
+    background: #ffffffba;
     /* Definir la sombra */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* offsetX, offsetY, blurRadius, color */
     transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
@@ -52,7 +58,7 @@ border-radius: 50%;
 
 .divLink{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
 }
 .parrafoTotal{

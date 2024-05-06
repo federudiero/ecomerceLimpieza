@@ -8,6 +8,7 @@ import Carousel from '../Components/carousel/Carousel';
 import style from '../views/Home.module.css';
 
 function Home() {
+
   return (
     <div>
       <Header />
@@ -17,6 +18,7 @@ function Home() {
           {/* Añade el espacio entre los componentes con space-y-12 */}
           <ComoTrabajo />
           <ComponenteDescuento />
+          <Carousel />
           <Filter />
         </div>
       </div>

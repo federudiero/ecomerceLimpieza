@@ -10,6 +10,7 @@ function Cards() {
   const filteredProducts = useSelector(state => state.filteredProductos);
   const searchTerm = useSelector(state => state.searchTerm);
 
+
   useEffect(() => {
     // Cargar los productos desde Firebase al montar el componente
     dispatch(loadProducts());
