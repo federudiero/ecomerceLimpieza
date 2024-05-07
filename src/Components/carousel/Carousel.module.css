@@ -16,7 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 1000px;
+    
 
    }
    .cardCarousel{
@@ -84,3 +85,29 @@
       
    }
    
+
+
+
+   @media only screen and (max-width: 768px) {
+    
+    .carouselContainerPadre{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1800px;
+    
+       }
+  }
+
+
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .carouselContainerPadre{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1000px;
+      
+       }
+}
+
+/* Media query para pantallas de 991px a 1300px de ancho */
