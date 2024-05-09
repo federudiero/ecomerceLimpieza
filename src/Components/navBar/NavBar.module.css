@@ -14,8 +14,23 @@
 
 .menu {
   display: flex;
-  flex: 1;
-  justify-content: center;
+  flex: 1 1;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.alert {
+  position: absolute;
+  top: calc(100% + 10px); /* Posiciona la alerta debajo del botón de carrito */
+  left: -100%; /* Centra horizontalmente */
+  transform: translateX(-50%);
+  width: 200px; /* Ancho de la alerta */
+  padding: 10px;
+  background-color: #ffffff; /* Color de fondo de la alerta */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1100; /* Asegura que esté por encima del navbar */
+  text-align: center;
 }
 
 /* Media Query para pantallas pequeñas */
@@ -33,6 +48,11 @@
       gap: 20px;
       background-color: #3c3c3c; /* Color de fondo */
       color: #e5e5e5; 
+    }
+    .menu {
+      display: flex;
+      flex: 1;
+      justify-content: center;
     }
   
 }

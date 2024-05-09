@@ -15,16 +15,19 @@
 .carritoCardContainer{
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
-    max-height: 520px; /* Altura máxima del contenedor */
-    overflow-y: auto; /* Hacer que el contenido sea desplazable verticalmente */
+    max-height: 520px;
+    width: 800px;
+    overflow-y: auto;
     padding-right: 10px;
-    padding-bottom:100px ;
+    padding-bottom: 100px;
     padding-top: 50px;
-   
     margin-top: 100px;
     
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
    
     
 
@@ -40,18 +43,17 @@ border-radius: 50%;
 }
 .card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     color: black;
-    height: 150px;
-    width:610px;
+    height: 300px;
+    width: 250px;
     border-radius: 20px;
     justify-content: center;
     background: #ffffffba;
-    /* Definir la sombra */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* offsetX, offsetY, blurRadius, color */
-    transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
 /* Efecto de sombra al hacer hover */
@@ -91,6 +93,7 @@ border-radius: 50%;
         align-items: center;
         height: 100vh;
         display: flex;
+      
     }
     .carritoCardContainer {
         width: 100%; /* Ajusta el ancho al 100% */
@@ -101,6 +104,9 @@ border-radius: 50%;
         margin-bottom: 0; /* Elimina el margen inferior */
         margin-top: 100px;
         height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
     }
     .card {
         width: 80%;
@@ -108,6 +114,7 @@ border-radius: 50%;
         height: 220px;
         flex-direction: column;
         padding: 10px;/* Ajusta el ancho al 100% */
+        height: 270px;
     }
     .textoCart {
         display: flex;
@@ -145,19 +152,27 @@ border-radius: 50%;
         display: flex;
     }
     .carritoCardContainer {
-        width: 100%; /* Ajusta el ancho al 100% */
+
+        width: 500px; /* Ajusta el ancho al 100% */
         padding: 20px; /* Reduce el relleno para evitar el desbordamiento */
         padding-top: 20px;
         padding-bottom: 20px;
         margin-top: 0; /* Elimina el margen superior */
         margin-bottom: 0; /* Elimina el margen inferior */
-        margin-top: 100px;
+        
         height: 100vh;
+        margin-top: 100px;
+        align-items: center;
+        gap: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      
     }
     .card {
-        width: 80%;
+        width: 200px;
         display: flex;
-        height: 220px;
+        height: 300px;
         flex-direction: column;
         padding: 10px;/* Ajusta el ancho al 100% */
     }
