@@ -23,6 +23,11 @@ const Carousel = () => {
         alert('Producto agregado al carrito');
     };
 
+    // Función para formatear la descripción y añadir saltos de línea antes de cada guion (-)
+    const formatDescription = (description) => {
+        return description.replace(/-/g, '<br>-');
+    };
+
     return (
         <div className={style.carouselContainerPadre}>
             {loading ? (
@@ -36,14 +41,15 @@ const Carousel = () => {
                                 <img className={style.imgCarousel} src={product.url} alt={product.title} />
                                 <div>
                                     <h3 className={style.h3Carousel}>{product.nombre}</h3>
-                                    <p className={style.pCarousel}>{product.descripcion}</p>
+                                    {/* Renderiza la descripción formateada con saltos de línea */}
+                                    <p className={style.pCarousel} dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
                                 </div>
-                                    <button
-                                        className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
-                                        onClick={() => handleAddToCart(product)} // Manejador del evento click
-                                    >
-                                        Agregar al carrito
-                                    </button>
+                                <button
+                                    className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
+                                    onClick={() => handleAddToCart(product)} // Manejador del evento click
+                                >
+                                    Agregar al carrito
+                                </button>
                             </div>
                         ))
                     ) : (
@@ -57,14 +63,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-
-
-
-
-
-
-
-
-
-
