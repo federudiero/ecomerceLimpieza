@@ -4,8 +4,20 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/actions';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Link } from 'react-router-dom';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import style from './ProductoDetail.module.css';
 
 function ProductDetail({ productId }) {
+  const iconStyle = {
+    width: '50px',
+    height: '50px',
+    cursor: 'pointer',
+    color: '#f7df1e' 
+  };
+
+
+
   const dispatch = useDispatch();
   const products = useSelector(state => state.productos);
   const selectedProduct = products.find(product => product.id === productId);
@@ -34,7 +46,11 @@ function ProductDetail({ productId }) {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-success-content">
+      <a href="/" >
+          <ArrowCircleLeftIcon style={iconStyle} />
+        </a>
       <div className="flex flex-col lg:flex-row bg-base-200 shadow-xl rounded-lg overflow-hidden max-w-screen-lg mx-4">
+         
         <div className="w-full h-56 overflow-hidden flex items-center justify-center border-primary">
           <img className="w-full h-full object-cover" src={selectedProduct.url} alt="Producto" />
         </div>

@@ -47,7 +47,7 @@ function Home() {
           <Carousel />
          </div>
        
-          <Filter />
+        
         </div>
       </div>
       <div ref={cardsRef}> {/* Asigna la referencia a la sección de tarjetas */}

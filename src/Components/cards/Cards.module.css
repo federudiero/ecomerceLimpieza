@@ -1,43 +1,80 @@
-.cardsContainer {
-    display: flex;
-    justify-content: center;
-    
-   margin-bottom: 50px;
-}
 
 
 
-.gridContainer {
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Divide en tres columnas de igual ancho */
-    gap: 20px; /* Espacio entre las tarjetas */
-}
 
 .cardsContainerPadreMayor {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    background: rgb(255 255 255 / 78%) 42%; /* Utiliza un color más similar con una opacidad del 70% */
-    border-top : 3px solid #0082be;
+    background: rgb(255 255 255 / 78%) 42%;
+    border-top: 3px solid #0082be;
+    
+}
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide en cuatro columnas de igual ancho */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    margin: 50px;
+   
+    max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
+    overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
+  }
+
+
+
+.ContainerFilterCards{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 1000px;
+    align-items: center;
+    margin-bottom: 50px;
+  margin-top: 50px;
+    
 
 }
-
-
-
+.noProducts{
+    color: black;
+    width: 600px;
+    text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
 
  
     
-    .gridContainer {
-        margin-top: 100px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Divide en tres columnas de igual ancho */
-        gap: 20px; /* Espacio entre las tarjetas */
-    }
+   
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Divide en cuatro columnas de igual ancho */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    margin: 50px;
+   
+   /* Altura máxima a la que se mostrará el contenido */
+   /* Hace que el contenido desborde sea visible con scroll */
+  }
+
+
+  .cardsContainerPadreMayor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255 255 255 / 78%) 42%;
+    border-top: 3px solid #0082be;
     
+}
+.ContainerFilterCards{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 300px;
+    
+   
+    
+
+}
    
     
   
@@ -47,13 +84,16 @@
   @media only screen and (min-width: 769px) and (max-width: 991px) {
     
     
-    .gridContainer {
-        margin-top: 100px;
+    .cardsContainer {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Divide en tres columnas de igual ancho */
+        grid-template-columns: repeat(2, 1fr); /* Divide en cuatro columnas de igual ancho */
         gap: 20px; /* Espacio entre las tarjetas */
-    }
-    
+        justify-content: center;
+        margin: 50px;
+       
+        max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
+        overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
+      }
     
   }
   
@@ -64,12 +104,16 @@
    
     
     
-    .gridContainer {
-        margin-top: 100px;
+    .cardsContainer {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Divide en tres columnas de igual ancho */
+        grid-template-columns: repeat(3, 1fr); /* Divide en cuatro columnas de igual ancho */
         gap: 20px; /* Espacio entre las tarjetas */
-    }
+        justify-content: center;
+        margin: 50px;
+       
+        max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
+        overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
+      }
     
   }
   

@@ -5,8 +5,17 @@ import style from './Carrito.module.css';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { Link } from 'react-router-dom';
 import Count from '../Count/Count';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 function Carrito() {
+  const iconStyle = {
+    width: '50px',
+    height: '50px',
+    cursor: 'pointer',
+    color: '#f7df1e' ,
+    margin: '100px'
+  };
+
   const cart = useSelector(state => state.cart);
   const cartCounts = useSelector(state => state.cartCounts); // Cambiado a cartCounts directamente
   const dispatch = useDispatch();
@@ -51,7 +60,9 @@ function Carrito() {
 
   return (
     <div className={style.containerCart}>
-     
+     <a href="/" >
+          <ArrowCircleLeftIcon style={iconStyle} />
+        </a>
       {cart.length === 0 ? (
         <p>No hay productos en el carrito</p>
       ) : (
