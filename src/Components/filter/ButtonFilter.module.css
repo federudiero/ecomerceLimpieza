@@ -9,8 +9,12 @@
   align-items: center;
   gap: 20px;
   z-index: 999;
-  background-color: #000000;
+ 
   border-radius: 10px;
+  border:3px solid #0082be;
+ margin: 10px;
+ background-color: #9595969c;
+ 
   
   
 }
@@ -21,14 +25,16 @@
   cursor: pointer;
   padding: 3px;
   border-radius: 0.375rem;
-  background-color: transparent;
+  background-color: black;
   color: #d2d2d2; /* Cambiamos el color del texto */
   border: 1px solid #d2d2d2; /* Añadimos un borde blanco */
 }
 
 .buttonResete:hover {
-  color: rgb(172, 36, 36);
+  color: rgb(242, 242, 242);
+  background-color: rgb(225, 0, 0) ;
 }
+
 
 .options {
   background-color: rgb(46, 45, 45);
@@ -67,7 +73,7 @@
     align-items: center;
     gap: 20px;
     z-index: 999;
-    background-color: #000000;
+    background-color: #f5f5f5;
     border-radius: 10px;
     
     

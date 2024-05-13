@@ -45,7 +45,7 @@ function Card({ id, nombre, category, precio, url }) {
       <button
         className="btn"
         onClick={handleAddToCart}
-        style={{ background: '#ffe600', color: 'black' }}
+        style={{ background: '#f5f5f5', color: 'black' }}
       >
         <AddShoppingCartIcon/>
         Agregar al carrito
