@@ -10,6 +10,8 @@ import Footer from './Components/Footer/Footer';
 import NosotrosView from './views/NosotrosView';
 import ContactoView from './views/ContactoView';
 import FormularioFirebaseView from './views/FormularioFirebaseView';
+import WhatsAppButton from '../src/Components/whatsapp/WhatsAppButton';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+        <WhatsAppButton/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product-detail/:productId" element={<DetailProductoId />} />

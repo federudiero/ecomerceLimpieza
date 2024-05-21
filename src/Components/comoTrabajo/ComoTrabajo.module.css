@@ -1,9 +1,10 @@
 .divComoTrabajo {
     /* Estilos para el contenedor principal */
+    margin-top:30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:500px;
+    height:350px;
     justify-content: space-evenly;
    
     color: #1d1d1d;

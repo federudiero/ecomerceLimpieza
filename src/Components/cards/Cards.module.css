@@ -10,16 +10,19 @@
    
     border-top: 3px solid #0082be;
     
+    
 }
 .cardsContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Divide en cuatro columnas de igual ancho */
+    grid-template-columns: repeat(4, 1fr); /* Divide en cuatro columnas de igual ancho */
     gap: 20px; /* Espacio entre las tarjetas */
     justify-content: center;
     margin: 50px;
-   
     max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
     overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
+    background-color: #c6c6c68d;
+    border-radius: 10px;
+
   }
 
 
@@ -27,8 +30,8 @@
 .ContainerFilterCards{
     display: flex;
     background-size: cover;
-  background-position: center;
-  background-image: url('../../img/limpiezaFilter.jpg');
+    background-position: center;
+    background-color: transparent;
   filter: brightness(80%);
     height: 1000px;
     align-items: center;
@@ -66,7 +69,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: rgb(255 255 255 / 78%) 42%;
+    background: rgba(255, 255, 255, 0.267) 42%;
     border-top: 3px solid #0082be;
     
 }
@@ -79,6 +82,20 @@
     
 
 }
+.ContainerFilterCards{
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+filter: brightness(80%);
+  height: 300px;
+  align-items: center;
+  margin-bottom: 50px;
+margin-top: 50px;
+color: black;
+  
+
+} 
    
     
   

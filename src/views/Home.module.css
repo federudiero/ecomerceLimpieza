@@ -1,11 +1,6 @@
 .containerHeader{
-    background:
-    linear-gradient(
-      180deg,
-      rgba(243, 244, 246, 1) 0%,
-      rgba(8, 8, 8, 1) 100%
-    );
-   height: 2000px;
+ background-color: rgba(241, 241, 241, 0.926);
+   height: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +9,7 @@
 .containerCardsHome{
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/fondodecard.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../img/fondodecard.jpg');
 
 }
 

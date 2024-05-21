@@ -39,17 +39,18 @@ const Carousel = () => {
                         combos.map(product => (
                             <div className={style.cardCarousel} key={product.id}>
                                 <img className={style.imgCarousel} src={product.url} alt={product.title} />
-                                <div>
-                                    <h3 className={style.h3Carousel}>{product.nombre}</h3>
+                                <div className={style.contenth3h2buton}>
+                                <h3 className={style.h3Carousel}>{product.nombre}</h3>
+
                                     {/* Renderiza la descripción formateada con saltos de línea */}
                                     <p className={style.pCarousel} dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
-                                </div>
                                 <button
                                     className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
                                     onClick={() => handleAddToCart(product)} // Manejador del evento click
                                 >
                                     Agregar al carrito
                                 </button>
+                                </div>
                             </div>
                         ))
                     ) : (
