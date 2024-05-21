@@ -53,6 +53,7 @@ function Home() {
       <div className={style.containerCardsHome} ref={cardsRef}> {/* Asigna la referencia a la sección de tarjetas */}
         <Cards />
       </div>
+     
     </div>
   );
 }

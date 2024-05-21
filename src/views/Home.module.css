@@ -9,7 +9,7 @@
 .containerCardsHome{
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../img/fondodecard.jpg');
+  background-image: linear-gradient(rgba(238, 238, 238, 0.73), rgba(221, 221, 221, 0.714));
 
 }
 
