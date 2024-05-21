@@ -11,38 +11,25 @@
   filter: brightness(80%); /* Ajusta el brillo según sea necesario */
 }
 
-.whatsappButton {
-    height: 80px;
-    width: 200px;
-    background-color: #B2EBF2; /* Light blue pastel color */
-    color: #171717; /* Black text color */
-    font-weight: bold;
-    border: none;
-    border-radius: 30px; /* Rounded corners */
-    cursor: pointer;
-    animation: whatsapp-pulse 2s infinite, whatsapp-color-change 4s infinite; /* Continuous pulse and color change animation */
-    font-size: 25px;
-  }
-  
-  @keyframes whatsapp-pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes whatsapp-color-change {
-    0%, 100% {
-      background-color: #d2d5d5; /* Light blue pastel color */
-    }
-    50% {
-      background-color: #ffe600; /* Yellow color */
-    }
-  }
+.buttonCustom {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 2rem;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px; /* Cambia este valor para ajustar el borde curvo */
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonCustom:hover {
+  background-color: #0082be;
+  color: white;
+ 
+}
   
 

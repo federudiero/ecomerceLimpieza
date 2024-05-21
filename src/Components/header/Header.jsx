@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { resetFilters } from '../../redux/actions';
 import style from '../header/Header.module.css';
 import { Link } from 'react-router-dom';
+import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
+import CategoryIcon from '@mui/icons-material/Category';
+import PetsIcon from '@mui/icons-material/Pets';
 
 function Header({scrollToCards ,carouselRef}) {
   const dispatch = useDispatch();
@@ -20,17 +23,30 @@ function Header({scrollToCards ,carouselRef}) {
           <p className="mb-5 text-white font-semibold text-xl">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
           <Link
         to="/#" // Mantén el enlace vacío para evitar redirecciones
-        className="text-white font-semibold text-lg mt-8 inline-block border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-500"
+        className={style.buttonCustom}
         onClick={scrollToCards} // Llama a la función scrollToCards al hacer clic en el enlace
       >
+      <CategoryIcon/>
+ 
         Ver Catálogo de Productos
       </Link>
           <Link
         to="/#" // Mantén el enlace vacío para evitar redirecciones
-        className="text-white font-semibold text-lg mt-8 inline-block border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-500"
+        className={style.buttonCustom}
         onClick={carouselRef} // Llama a la función scrollToCards al hacer clic en el enlace
       >
+        <LocalLaundryServiceIcon/>
+       
         Ver Combos de Limpieza
+      </Link>
+          <Link
+        to="/#" // Mantén el enlace vacío para evitar redirecciones
+        className={style.buttonCustom}
+        onClick={carouselRef} // Llama a la función scrollToCards al hacer clic en el enlace
+      >
+        <PetsIcon/>
+       
+        Balanceado Animales
       </Link>
         </div>
       </div>
