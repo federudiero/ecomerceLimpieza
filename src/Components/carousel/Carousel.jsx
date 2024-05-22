@@ -7,7 +7,7 @@ const Carousel = () => {
     const dispatch = useDispatch();
     const products = useSelector(state => state.productos);
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
         // Simula una carga de productos desde Redux (aquí puedes despachar una acción para cargar productos)
         setTimeout(() => {
@@ -29,37 +29,38 @@ const Carousel = () => {
     };
 
     return (
-        <div className={style.carouselContainerPadre}>
+        <>
             {loading ? (
                 <p>Cargando productos...</p>
             ) : (
-                <div className={style.carouselContainer}>
-                    {combos.length > 0 ? (
-                        // Si hay combos, mapea para renderizar cada producto con botón "Agregar al carrito"
-                        combos.map(product => (
-                            <div className={style.cardCarousel} key={product.id}>
-                                <img className={style.imgCarousel} src={product.url} alt={product.title} />
-                                <div className={style.contenth3h2buton}>
-                                <h3 className={style.h3Carousel}>{product.nombre}</h3>
-
-                                    {/* Renderiza la descripción formateada con saltos de línea */}
-                                    <p className={style.pCarousel} dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
-                                <button
-                                    className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
-                                    onClick={() => handleAddToCart(product)} // Manejador del evento click
-                                >
-                                    Agregar al carrito
-                                </button>
+                <div className={style.carouselContainerPadre}>
+                    <div className={style.carouselContainer}>
+                        {combos.length > 0 ? (
+                            // Si hay combos, mapea para renderizar cada producto con botón "Agregar al carrito"
+                            combos.map(product => (
+                                <div className={style.cardCarousel} key={product.id}>
+                                    <img className={style.imgCarousel} src={product.url} alt={product.title} />
+                                    <div className={style.contenth3h2buton}>
+                                        <h3 className={style.h3Carousel}>{product.nombre}</h3>
+                                        {/* Renderiza la descripción formateada con saltos de línea */}
+                                        <p className={style.pCarousel} dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
+                                        <button
+                                            className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
+                                            onClick={() => handleAddToCart(product)} // Manejador del evento click
+                                        >
+                                            Agregar al carrito
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    ) : (
-                        // Si no hay combos, muestra un mensaje
-                        <p>No hay combos disponibles.</p>
-                    )}
+                            ))
+                        ) : (
+                            // Si no hay combos, muestra un mensaje
+                            <p>No hay combos disponibles.</p>
+                        )}
+                    </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

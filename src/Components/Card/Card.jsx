@@ -18,9 +18,9 @@ function Card({ id, nombre, category, precio, url }) {
   };
 
   return (
-    <div className="dark card w-56 bg-gray-900 shadow-md m-2 flex flex-col">
-      <div className="w-full h-44 overflow-hidden flex items-center justify-center border-primary">
-        <img className="w-full h-full object-cover" src={url} alt="Producto" />
+    <div className="card w-56 bg-gray-900 shadow-md m-2 flex flex-col" style={{ borderRadius: '10px' }}>
+      <div className="w-full h-44 overflow-hidden flex items-center justify-center border-primary" style={{ borderRadius: '10px 10px 0 0' }}>
+        <img className="w-full h-full object-cover" src={url} alt="Producto" style={{ borderRadius: '10px 10px 0 0' }} />
       </div>
       <div className="card-body" style={{
         display: 'flex',
@@ -28,30 +28,32 @@ function Card({ id, nombre, category, precio, url }) {
         flexDirection: 'column',
         padding: 'var(--padding-card, 1rem)',
         gap: '0.1rem',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        borderRadius: '0 0 10px 10px'
       }}>
         <h2 className="text-white">{nombre}</h2>
         <h2 className="text-white mb-2">$ {precio}</h2>
         <h4 className="text-white mb-2">{category}</h4>
       </div>
-      <Link
-        to={`/product-detail/${id}`}
-        className="btn"
-        onClick={handleViewDetails}
-        style={{ background: '#0082be', color: 'black', marginBottom: '10px' }}
-      >
-        Ver detalle
-      </Link>
       <button
         className="btn"
         onClick={handleAddToCart}
-        style={{ background: '#f5f5f5', color: 'black' }}
+        style={{ background: '#f5f5f5', color: 'black', borderRadius: '10px' , marginBottom: '10px'}}
       >
         <AddShoppingCartIcon/>
         Agregar al carrito
       </button>
+      <Link
+        to={`/product-detail/${id}`}
+        className="btn"
+        onClick={handleViewDetails}
+        style={{ background: '#0082be', color: 'black', borderRadius: '10px' }}
+      >
+        Ver detalle
+      </Link>
     </div>
   );
 }
 
 export default Card;
+

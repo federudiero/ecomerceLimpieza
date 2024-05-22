@@ -3,12 +3,12 @@
 
 
 .cardsContainerPadreMayor {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-   
-    border-top: 3px solid #0082be;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-top: 3px solid #0082be;
+
     
     
 }
@@ -18,29 +18,26 @@
     gap: 20px; /* Espacio entre las tarjetas */
     justify-content: center;
     margin: 50px;
-    max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
-    overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
-    background-color: #c6c6c68d;
+   
     border-radius: 10px;
-
   }
 
 
 
 .ContainerFilterCards{
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    background-color: transparent;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
   filter: brightness(80%);
-    height: 1000px;
-    align-items: center;
-    margin-bottom: 50px;
+  height: 200px;
+  align-items: center;
+  margin-bottom: 50px;
   margin-top: 50px;
   color: black;
-    
-
 }
+
+
 .noProducts{
     color: black;
     width: 600px;
@@ -112,8 +109,7 @@ color: black;
         justify-content: center;
         margin: 50px;
        
-        max-height: 1000px; /* Altura máxima a la que se mostrará el contenido */
-        overflow: auto; /* Hace que el contenido desborde sea visible con scroll */
+      
       }
     
   }

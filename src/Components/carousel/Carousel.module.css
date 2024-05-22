@@ -1,33 +1,27 @@
-.carouselContainer  {
-   
+.carouselContainerPadre {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    align-content: center;
-    gap: 30px 30px;
-
-    
-
-        
-    }
-   .carouselContainerPadre{
-    display: flex;
-    align-items:  center;
     justify-content: center;
-    height: 800px;
-   
-   
+    height: 100vh; /* Asegura que ocupe el 100% de la altura de la ventana */
+    width: 100vw; /* Asegura que ocupe el 100% del ancho de la ventana */
     background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../../img/cleaning.png');
     background-repeat: no-repeat;
     background-size: cover;
-   
-   
-    
+}
 
-   }
-   .cardCarousel{
+.carouselContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    height: 100%; /* Ocupa el 100% de la altura del contenedor padre */
+    justify-items: center;
+}
+
+.cardCarousel {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,178 +33,125 @@
     border-radius: 10px;
     transition: 0.5s;
     border-bottom: 2px solid #0082be;
-    
+}
 
-    
-   }
-   .cardCarousel:hover{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 300px;
+.cardCarousel:hover {
     background-color: transparent;
-    ;
-    width: 630px;
-    justify-content: space-around;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    transition: 0.5s;
     color: white;
-   
-   }
-   
-   .contenth3h2buton{
+}
+
+.contenth3h2buton {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-   }
-   .imgCarousel{
+}
+
+.imgCarousel {
     height: 150px;
     width: 80%;
     border-radius: 10px;
     margin: 10px;
-   }
-   .h3Carousel{
-  
-    
+}
+
+.h3Carousel {
     height: 40px;
-    width:  300px;
+    width: 300px;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
     text-decoration: underline;
-   }
-   .pCarousel{
-   
-    
-    height: 70px;
-    width:  300px;
-    text-align: center;
-    font-size: 17px;
-    text-align: justify;
-    margin-top: 10px ;
-   }
-  
-   .btnAddToCart{
-       margin-top: 20px;
-       
-       background-color: #0e0e0e;
-       color: rgb(230, 230, 230);
-       border-radius: 10px;
-       width: 200px;
-       height: 50px;
-       font-weight: 600;
-       transition: 0.5s;
-   }
-   .btnAddToCart:hover{
-       margin-top: 20px;
-       background-color: #ebebeb;
-       color: black;
-       border-radius: 10px;
-       width: 200px;
-       height: 50px;
-       transition: 0.5s;
-      
-   }
-  
-   
-
-
-
-   @media only screen and (max-width: 768px) {
-    
-    .carouselContainerPadre{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2200px;
-    
-       }
-
-      
-
-
-    .cardCarousel{
-        display: flex;
-        flex-direction: column;
-        height: 470px;
-        background-color: #4b575c;
-        width: 300px;
-        justify-content: space-around;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        transition: 0.5s;
-        border-bottom: 2px solid #0082be;
-        align-items: center;
-        
-    
-        
-       }
-       .cardCarousel:hover{
-        display: flex;
-        flex-direction: column;
-        height: 470px;
-        background-color: #0082be;
-        width: 300px;
-        justify-content: space-around;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        transition: 0.5s;
-        color: white;
-       
-       }
-       .contenth3h2buton{
-        display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-    align-items: center;
-       }
-       .pCarousel{
-   
-    
-        height: 70px;
-        width:  300px;
-        text-align: center;
-        font-size: 17px;
-        text-align: center;
-        margin-top: 10px ;
-       }
-      
-  }
-
-
-  @media only screen and (min-width: 769px) and (max-width: 991px) {
-    .carouselContainerPadre{
-        display: flex;
-        align-items:  center;
-        justify-content: center;
-        height: 800px;
-       
-       
-        background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../../img/cleaning.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-       
-       
-        
-    
-       }
-       .carouselContainer  {
-   
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        gap: 30px 30px;
-    
-        
-    
-            
-        }
 }
 
-/* Media query para pantallas de 991px a 1300px de ancho */
+.pCarousel {
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.btnAddToCart {
+    margin-top: 20px;
+    background-color: #0e0e0e;
+    color: rgb(230, 230, 230);
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.btnAddToCart:hover {
+    background-color: #ebebeb;
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .carouselContainerPadre {
+        display: flex;
+        flex-direction: column;
+        height: auto; /* Ajusta la altura automáticamente */
+        background-color: #0082be;
+        padding: 20px; /* Añade un poco de padding para evitar que los elementos toquen los bordes */
+    }
+
+    .carouselContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .cardCarousel {
+        flex-direction: column;
+        height: auto; /* Ajusta la altura automáticamente */
+        width: 100%; /* Ocupa el 100% del ancho del contenedor */
+        max-width: 400px; /* Ajusta el ancho máximo */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .cardCarousel:hover {
+        background-color: #0082be;
+    }
+
+    .contenth3h2buton {
+        align-items: center;
+    }
+
+    .imgCarousel {
+        height: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .h3Carousel {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .pCarousel {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btnAddToCart {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    .carouselContainerPadre {
+        height: 100vh;
+    }
+
+    .carouselContainer {
+        grid-template-rows: repeat(2, auto);
+        max-height: 100vh;
+        overflow: auto;
+    }
+}

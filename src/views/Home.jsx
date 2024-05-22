@@ -36,24 +36,18 @@ function Home() {
       <Header scrollToCards={scrollToCards} carouselRef={scrollToCarousel} /> {/* Pasa la función scrollToCards como prop al Header */}
       <div className={style.containerHeader}>
         {/* Utiliza las clases de Tailwind CSS para centrar vertical y horizontalmente */}
-        <div  className="flex flex-col items-center justify-center space-y-12 mt-12 ">
-          {/* Añade el espacio entre los componentes con space-y-12 */}
+        <div className={`${style.flexContainer} flex flex-col items-center justify-center mt-12`}>
+          {/* Añade el espacio entre los componentes con gap */}
           <ComponenteDescuento />
           <ComoTrabajo />
-
-         <div ref={carouselRef}>
-
-
-          <Carousel />
-         </div>
-       
-        
+          <div ref={carouselRef}>
+            <Carousel />
+          </div>
         </div>
       </div>
       <div className={style.containerCardsHome} ref={cardsRef}> {/* Asigna la referencia a la sección de tarjetas */}
         <Cards />
       </div>
-     
     </div>
   );
 }
