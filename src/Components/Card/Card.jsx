@@ -32,8 +32,9 @@ function Card({ id, nombre, category, precio, url }) {
         borderRadius: '0 0 10px 10px'
       }}>
         <h2 className="text-white">{nombre}</h2>
-        <h2 className="text-white mb-2">$ {precio}</h2>
         <h4 className="text-white mb-2">{category}</h4>
+        <br />
+        <h2 className="text-white mb-2">$ {precio}</h2>
       </div>
       <button
         className="btn"

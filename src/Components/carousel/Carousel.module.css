@@ -1,18 +1,21 @@
+/* Estilos generales para el contenedor padre del carrusel */
 .carouselContainerPadre {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Asegura que ocupe el 100% de la altura de la ventana */
-    width: 100vw; /* Asegura que ocupe el 100% del ancho de la ventana */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../../img/cleaning.png');
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../../img/limpieza2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    border-top: 2px solid #0082be;
 }
 
+/* Contenedor del carrusel */
 .carouselContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -21,23 +24,28 @@
     justify-items: center;
 }
 
+/* Estilos para cada tarjeta del carrusel */
 .cardCarousel {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    height: 300px;
-    background-color: #4b575c;
-    width: 630px;
+    height: 450px;
+    background-color: transparent;
+    width: 270px;
     justify-content: space-around;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: 0.5s;
     border-bottom: 2px solid #0082be;
+    border-left: 2px solid #0082be;
+    color: black;
 }
 
 .cardCarousel:hover {
-    background-color: transparent;
+    background-color: #0082be;
     color: white;
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000;
 }
 
 .contenth3h2buton {
@@ -45,11 +53,13 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    align-items: center;
+    font-size: 20px;
 }
 
 .imgCarousel {
-    height: 150px;
-    width: 80%;
+    height: 140px;
+    width: 70%;
     border-radius: 10px;
     margin: 10px;
 }
@@ -60,15 +70,15 @@
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    text-decoration: underline;
 }
 
 .pCarousel {
     height: 70px;
     width: 300px;
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
     margin-top: 10px;
+    font-weight: 700;
 }
 
 .btnAddToCart {
@@ -87,6 +97,7 @@
     color: black;
 }
 
+/* Estilos para dispositivos con un ancho máximo de 768px */
 @media only screen and (max-width: 768px) {
     .carouselContainerPadre {
         display: flex;
@@ -144,6 +155,7 @@
     }
 }
 
+/* Estilos para dispositivos con un ancho mínimo de 769px y máximo de 991px */
 @media only screen and (min-width: 769px) and (max-width: 991px) {
     .carouselContainerPadre {
         height: 100vh;
@@ -153,5 +165,127 @@
         grid-template-rows: repeat(2, auto);
         max-height: 100vh;
         overflow: auto;
+    }
+}
+
+/* Estilos específicos para Carousel2 */
+.carouselContainer2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+}
+
+.carouselContainerPadre2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.221), rgba(0, 0, 0, 0.4)), url('../../img/perro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+}
+
+.divPerroTitulo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
+    width: 100%;
+    justify-items: center;
+}
+
+.h2Carousel2 {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.imgCarousel2 {
+    height: 270px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.cardCarousel2 {
+    display: flex;
+    flex-direction: row;
+    height: 280px;
+    background-color: #4b575cae;
+    width: 540px;
+    justify-content: space-around;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: 0.5s;
+    border-bottom: 2px solid #0082be;
+    align-items: center;
+}
+
+.cardCarousel2:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.contenth3h2buton2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+/* Estilos específicos para Carousel2 en dispositivos con un ancho máximo de 768px */
+@media only screen and (max-width: 768px) {
+    .carouselContainerPadre2 {
+        flex-direction: column;
+        padding: 20px;
+        height: 1400px;
+        width: 100vw;
+    }
+
+    .carouselContainer2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .cardCarousel2 {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .divPerroTitulo2 {
+        height: auto;
+        width: 100%;
+    }
+
+    .imgCarousel2 {
+        height: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .h2Carousel2 {
+        font-size: 24px;
+    }
+
+    .btnAddToCart {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 10px;
     }
 }

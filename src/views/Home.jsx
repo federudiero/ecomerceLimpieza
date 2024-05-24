@@ -1,52 +1,65 @@
 import React, { useRef } from 'react';
 import Header from '../Components/header/Header';
 import Cards from '../Components/cards/Cards';
-import Filter from '../Components/filter/Filter';
 import ComponenteDescuento from '../Components/componenteDescuento/ComponenteDescuento';
 import ComoTrabajo from '../Components/comoTrabajo/ComoTrabajo';
 import Carousel from '../Components/carousel/Carousel';
 import style from '../views/Home.module.css';
+import Carousel2 from '../Components/carousel2/Carousel2';
 
 function Home() {
-  const cardsRef = useRef(null); // Referencia para la sección de tarjetas
+  const cardsRef = useRef(null);
+  const carouselRef = useRef(null);
+  const carouselRef2 = useRef(null);
 
-  // Función para desplazarse a la sección de tarjetas cuando se hace clic en el enlace
   const scrollToCards = () => {
     if (cardsRef.current) {
       window.scrollTo({
-        top: cardsRef.current.offsetTop, // Desplaza hasta la posición superior de la sección de tarjetas
-        behavior: 'smooth' // Desplazamiento suave
+        top: cardsRef.current.offsetTop,
+        behavior: 'smooth'
       });
     }
   };
-  const carouselRef = useRef(null); // Referencia para la sección de tarjetas
 
-  // Función para desplazarse a la sección de tarjetas cuando se hace clic en el enlace
   const scrollToCarousel = () => {
     if (carouselRef.current) {
       window.scrollTo({
-        top: carouselRef.current.offsetTop, // Desplaza hasta la posición superior de la sección de tarjetas
-        behavior: 'smooth' // Desplazamiento suave
+        top: carouselRef.current.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollToCarousel2 = () => {
+    if (carouselRef2.current) {
+      window.scrollTo({
+        top: carouselRef2.current.offsetTop,
+        behavior: 'smooth'
       });
     }
   };
 
   return (
     <div>
-      <Header scrollToCards={scrollToCards} carouselRef={scrollToCarousel} /> {/* Pasa la función scrollToCards como prop al Header */}
+      <Header
+        scrollToCards={scrollToCards}
+        scrollToCarousel={scrollToCarousel}
+        scrollToCarousel2={scrollToCarousel2}
+      />
       <div className={style.containerHeader}>
-        {/* Utiliza las clases de Tailwind CSS para centrar vertical y horizontalmente */}
-        <div className={`${style.flexContainer} flex flex-col items-center justify-center mt-12`}>
-          {/* Añade el espacio entre los componentes con gap */}
+        <div className={`${style.flexContainer} flex flex-col items-center justify-center `}>
           <ComponenteDescuento />
           <ComoTrabajo />
+        </div>
+      </div>
+      <div className={style.containerCardsHome} ref={cardsRef}>
+        <Cards />
+      </div>
           <div ref={carouselRef}>
             <Carousel />
           </div>
-        </div>
-      </div>
-      <div className={style.containerCardsHome} ref={cardsRef}> {/* Asigna la referencia a la sección de tarjetas */}
-        <Cards />
+      <div ref={carouselRef2}>
+        <Carousel2 />
       </div>
     </div>
   );

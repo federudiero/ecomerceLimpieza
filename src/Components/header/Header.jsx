@@ -8,46 +8,40 @@ import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import CategoryIcon from '@mui/icons-material/Category';
 import PetsIcon from '@mui/icons-material/Pets';
 
-function Header({scrollToCards ,carouselRef}) {
+function Header({ scrollToCards, scrollToCarousel, scrollToCarousel2 }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="hero min-h-screen relative overflow-hidden border-b-2 border-blue-500 ">
-      <div
-        className={style.headerContainerimgbg}
-        
-      ></div>
+    <div className="hero min-h-screen relative overflow-hidden border-b-2 border-blue-500">
+      <div className={style.headerContainerimgbg}></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md mx-auto"> {/* mx-auto para centrar el contenido */}
+        <div className="max-w-md mx-auto">
           <h1 className="mb-5 text-5xl font-bold text-white">Limpiar es más fácil con nosotros</h1>
           <p className="mb-5 text-white font-semibold text-xl">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
           <Link
-        to="/#" // Mantén el enlace vacío para evitar redirecciones
-        className={style.buttonCustom}
-        onClick={scrollToCards} // Llama a la función scrollToCards al hacer clic en el enlace
-      >
-      <CategoryIcon/>
- 
-        Ver Catálogo de Productos
-      </Link>
+            to="/#"
+            className={style.buttonCustom}
+            onClick={scrollToCards}
+          >
+            <CategoryIcon />
+            Ver Catálogo de Productos
+          </Link>
           <Link
-        to="/#" // Mantén el enlace vacío para evitar redirecciones
-        className={style.buttonCustom}
-        onClick={carouselRef} // Llama a la función scrollToCards al hacer clic en el enlace
-      >
-        <LocalLaundryServiceIcon/>
-       
-        Ver Combos de Limpieza
-      </Link>
+            to="/#"
+            className={style.buttonCustom}
+            onClick={scrollToCarousel}
+          >
+            <LocalLaundryServiceIcon />
+            Ver Combos de Limpieza
+          </Link>
           <Link
-        to="/#" // Mantén el enlace vacío para evitar redirecciones
-        className={style.buttonCustom}
-        onClick={carouselRef} // Llama a la función scrollToCards al hacer clic en el enlace
-      >
-        <PetsIcon/>
-       
-        Balanceado Animales
-      </Link>
+            to="/#"
+            className={style.buttonCustom}
+            onClick={scrollToCarousel2}
+          >
+            <PetsIcon />
+            Balanceado Animales
+          </Link>
         </div>
       </div>
     </div>
