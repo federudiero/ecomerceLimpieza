@@ -248,8 +248,10 @@
     .carouselContainerPadre2 {
         flex-direction: column;
         padding: 20px;
-        height: 1400px;
+        height: 1700px;
         width: 100vw;
+       padding-top: 50px;
+  
     }
 
     .carouselContainer2 {
@@ -261,7 +263,7 @@
 
     .cardCarousel2 {
         flex-direction: column;
-        height: auto;
+        height: 600px;
         width: 100%;
         max-width: 400px;
         align-items: center;
