@@ -11,6 +11,7 @@ import NosotrosView from './views/NosotrosView';
 import ContactoView from './views/ContactoView';
 import FormularioFirebaseView from './views/FormularioFirebaseView';
 import WhatsAppButton from '../src/Components/whatsapp/WhatsAppButton';
+import Balanceado from './views/Balanceado';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/nosotros" element={<NosotrosView />} />
         <Route path="/contacto" element={<ContactoView />} />
         <Route path="/formulario" element={<FormularioFirebaseView />} />
+        <Route path="/balanceado" element={<Balanceado />} />
       </Routes>
       <Footer/>
     </div>

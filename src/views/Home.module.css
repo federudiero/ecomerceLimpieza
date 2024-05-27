@@ -1,5 +1,5 @@
 .containerHeader {
-  background-color: aliceblue;
+  background-color: rgb(189, 189, 189);
   height: auto; /* Ajusta la altura automáticamente */
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 .containerCardsHome {
   background-size: cover;
   background-position: center;
-  background-color: aliceblue;
+  background-color: rgb(189, 189, 189);
   padding: 20px;
 }
 

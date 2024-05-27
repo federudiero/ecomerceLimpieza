@@ -1,6 +1,6 @@
 .filtercontainer {
   display: flex;
-  height: 100px;
+  height: 70px;
   background-color: transparent;
   padding: 10px;
   flex-direction: row;
@@ -11,7 +11,7 @@
   border-radius: 10px;
   border: 3px solid #0082be;
   margin: 10px;
-  background-color: #9595969c;
+  background-color: transparent;
 }
   
   
@@ -74,7 +74,7 @@
     align-items: center;
     gap: 20px;
     z-index: 999;
-    background-color: #f5f5f5;
+    background-color: transparent;
     border-radius: 10px;
     
     

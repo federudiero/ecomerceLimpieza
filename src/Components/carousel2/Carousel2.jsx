@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import style from '../carousel/Carousel.module.css';
 import { addToCart } from '../../redux/actions'; // Importa la acción addToCart
 import perro from '../../img/perro22.png';
+import { Link } from 'react-router-dom';
 
 const Carousel2 = () => {
     const dispatch = useDispatch();
@@ -40,6 +41,8 @@ const Carousel2 = () => {
 
                 <img src={perro} alt="" />
                 <h2 className={style.h2Carousel2}>Comuida para tu mascota</h2>
+                <tr className={style.br}/>
+                <Link to={'/balanceado'} className={style.buttonVerMas}>Ver mas</Link>
             </div>
             {loading ? (
                 <p>Cargando productos...</p>
@@ -65,6 +68,7 @@ const Carousel2 = () => {
                         // Si no hay productos, muestra un mensaje
                         <p>No hay productos disponibles.</p>
                     )}
+             
                 </div>
             )}
         </div>

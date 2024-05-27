@@ -58,7 +58,7 @@ const Filter = () => {
             </div>
 
             <div className="form-control">
-                <input type="text" placeholder="Buscar..." className="input input-bordered w-24 md:w-auto" value={searchTerm} onChange={handleSearch} />
+                <input type="text" placeholder="Buscar..." className="input input-bordered w-24 md:w-auto bg-white" value={searchTerm} onChange={handleSearch} />
             </div>
 
             <button className={style.buttonResete} onClick={handleResetFilters}>Eliminar Filtros</button>

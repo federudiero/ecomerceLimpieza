@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setSelectedProductId, addToCart } from '../../redux/actions'; 
@@ -14,47 +13,36 @@ function Card({ id, nombre, category, precio, url }) {
   const handleAddToCart = () => {
     const product = { id, nombre, category, precio, url };
     dispatch(addToCart(product));
-  
   };
 
   return (
-    <div className="card w-56 bg-gray-900 shadow-md m-2 flex flex-col" style={{ borderRadius: '10px' }}>
-      <div className="w-full h-44 overflow-hidden flex items-center justify-center border-primary" style={{ borderRadius: '10px 10px 0 0' }}>
-        <img className="w-full h-full object-cover" src={url} alt="Producto" style={{ borderRadius: '10px 10px 0 0' }} />
+    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+      <div className="flex-grow">
+        <img className="w-full h-56 object-cover" src={url} alt="Product" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2 text-gray-800">{nombre}</div>
+          <p className="text-gray-600 text-base mb-2">{category}</p>
+          <p className="text-gray-800 text-xl">${precio}</p>
+        </div>
       </div>
-      <div className="card-body" style={{
-        display: 'flex',
-        flex: '1 1 auto',
-        flexDirection: 'column',
-        padding: 'var(--padding-card, 1rem)',
-        gap: '0.1rem',
-        justifyContent: 'space-evenly',
-        borderRadius: '0 0 10px 10px'
-      }}>
-        <h2 className="text-white">{nombre}</h2>
-        <h4 className="text-white mb-2">{category}</h4>
-        <br />
-        <h2 className="text-white mb-2">$ {precio}</h2>
+      <div className="px-6 py-4">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center justify-center"
+          onClick={handleAddToCart}
+        >
+          <AddShoppingCartIcon className="mr-2" />
+          <span>Agregar al carrito</span>
+        </button>
+        <Link
+          to={`/product-detail/${id}`}
+          className="text-blue-500 hover:underline focus:outline-none mt-4 flex items-center justify-center"
+          onClick={handleViewDetails}
+        >
+          <span>Ver detalle</span>
+        </Link>
       </div>
-      <button
-        className="btn"
-        onClick={handleAddToCart}
-        style={{ background: '#f5f5f5', color: 'black', borderRadius: '10px' , marginBottom: '10px'}}
-      >
-        <AddShoppingCartIcon/>
-        Agregar al carrito
-      </button>
-      <Link
-        to={`/product-detail/${id}`}
-        className="btn"
-        onClick={handleViewDetails}
-        style={{ background: '#0082be', color: 'black', borderRadius: '10px' }}
-      >
-        Ver detalle
-      </Link>
     </div>
   );
 }
 
 export default Card;
-
