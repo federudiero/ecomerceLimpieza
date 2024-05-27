@@ -50,17 +50,18 @@ function Home() {
         <div className={`${style.flexContainer} flex flex-col items-center justify-center `}>
           <ComponenteDescuento />
           <ComoTrabajo />
+      <div ref={carouselRef2}>
+        <Carousel2 />
+      </div>
         </div>
       </div>
       <div className={style.containerCardsHome} ref={cardsRef}>
+      
         <Cards />
       </div>
           <div ref={carouselRef}>
             <Carousel />
           </div>
-      <div ref={carouselRef2}>
-        <Carousel2 />
-      </div>
     </div>
   );
 }

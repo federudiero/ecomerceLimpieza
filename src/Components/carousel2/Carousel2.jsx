@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import style from '../carousel/Carousel.module.css';
-import { addToCart } from '../../redux/actions'; // Importa la acción addToCart
+import { addToCart } from '../../redux/actions';
 import perro from '../../img/perro22.png';
 import { Link } from 'react-router-dom';
 
@@ -11,53 +10,46 @@ const Carousel2 = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simula una carga de productos desde Redux (aquí puedes despachar una acción para cargar productos)
         setTimeout(() => {
-            setLoading(false); // Indica que la carga ha finalizado
-        }, 2000); // Simulamos una carga de 2 segundos
+            setLoading(false);
+        }, 2000);
     }, []);
 
-    // Filtrar productos por categoría 'Balanceado'
     const balanceadoProducts = products.filter(product => product.category === 'Balanceado');
 
-    // Función para seleccionar n elementos aleatorios de un array
     const getRandomElements = (arr, n) => {
         const shuffled = arr.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, n);
     };
 
-    // Obtener 4 productos aleatorios de la categoría 'Balanceado'
-    const randomCombos = getRandomElements(balanceadoProducts, 2);
+    const randomCombos = getRandomElements(balanceadoProducts, 4);
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product)); // Dispatch de la acción addToCart con el producto seleccionado
+        dispatch(addToCart(product));
         alert('Producto agregado al carrito');
     };
 
     return (
-        <div className={style.carouselContainerPadre2}>
-
-            <div className={style.divPerroTitulo2}>
-
-                <img src={perro} alt="" />
-                <h2 className={style.h2Carousel2}>Comuida para tu mascota</h2>
-                <tr className={style.br}/>
-                <Link to={'/balanceado'} className={style.buttonVerMas}>Ver mas</Link>
+        <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center">
+                <img src={perro} alt="" className="w-48 h-48 mb-4" /> {/* Aumentamos el tamaño de la imagen */}
+                <h2 className="text-4xl font-bold mb-4 text-black">Comida para tu mascota</h2> {/* Aumentamos el tamaño y cambiamos el color del texto */}
+                <Link to={'/balanceado'} className="text-blue-500 hover:underline mb-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none">Ver más</Link> {/* Aplicamos estilos al enlace */}
             </div>
             {loading ? (
                 <p>Cargando productos...</p>
             ) : (
-                <div className={style.carouselContainer2}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {randomCombos.length > 0 ? (
-                        // Si hay productos, mapea para renderizar cada producto con botón "Agregar al carrito"
                         randomCombos.map(product => (
-                            <div className={style.cardCarousel2} key={product.id}>
-                                <img className={style.imgCarousel2} src={product.url} alt={product.title} />
-                                <div className={style.contenth3h2buton2}>
-                                    <h3 className={style.h3Carousel}>{product.nombre}</h3>
+                            <div key={product.id} className="max-w-md bg-white rounded-lg shadow-md overflow-hidden">
+                                <img className="w-full h-56 object-cover" src={product.url} alt={product.title} />
+                                <div className="p-4">
+                                    <h3 className="text-xl font-semibold mb-2">{product.nombre}</h3>
+                                    <p className="text-gray-700 mb-4">Descripción del producto...</p>
                                     <button
-                                        className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
-                                        onClick={() => handleAddToCart(product)} // Manejador del evento click
+                                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none inline-block"
+                                        onClick={() => handleAddToCart(product)}
                                     >
                                         Agregar al carrito
                                     </button>
@@ -65,10 +57,8 @@ const Carousel2 = () => {
                             </div>
                         ))
                     ) : (
-                        // Si no hay productos, muestra un mensaje
-                        <p>No hay productos disponibles.</p>
+                        <p className="text-center col-span-4">No hay productos disponibles.</p>
                     )}
-             
                 </div>
             )}
         </div>

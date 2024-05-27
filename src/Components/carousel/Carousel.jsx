@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import style from './Carousel.module.css';
-import { addToCart } from '../../redux/actions'; // Importa la acción addToCart
+import { addToCart, setSelectedProductId } from '../../redux/actions'; // Importa la acción setSelectedProductId
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Link } from 'react-router-dom';
+import styles from '../carousel/Carousel.module.css'; // Importa los estilos del archivo Carousel.module.css
 
 const Carousel = () => {
     const dispatch = useDispatch();
@@ -23,44 +25,59 @@ const Carousel = () => {
         alert('Producto agregado al carrito');
     };
 
+    const handleViewDetails = (id) => {
+        dispatch(setSelectedProductId(id)); // Dispatch de la acción setSelectedProductId con el ID del producto seleccionado
+    };
+
     // Función para formatear la descripción y añadir saltos de línea antes de cada guion (-)
     const formatDescription = (description) => {
         return description.replace(/-/g, '<br>-');
     };
 
     return (
-        <>
-            {loading ? (
-                <p>Cargando productos...</p>
-            ) : (
-                <div className={style.carouselContainerPadre}>
-                    <div className={style.carouselContainer}>
+        <div className={`${styles.carouselContainerPadre} bg-gradient-to-b from-gray-100 to-gray-300 flex justify-center items-center h-screen`}>
+            <div className="container mx-auto px-4 py-8">
+                <h2 className="text-3xl font-semibold mb-8 text-center text-gray-800">Elige tu combo</h2>
+                {loading ? (
+                    <p>Cargando productos...</p>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {combos.length > 0 ? (
                             // Si hay combos, mapea para renderizar cada producto con botón "Agregar al carrito"
                             combos.map(product => (
-                                <div className={style.cardCarousel} key={product.id}>
-                                    <img className={style.imgCarousel} src={product.url} alt={product.title} />
-                                    <div className={style.contenth3h2buton}>
-                                        <h3 className={style.h3Carousel}>{product.nombre}</h3>
-                                        {/* Renderiza la descripción formateada con saltos de línea */}
-                                        <p className={style.pCarousel} dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
+                                <div key={product.id} className="max-w-xs rounded overflow-hidden shadow-lg bg-white flex flex-col">
+                                    <img className="w-full h-56 object-cover" src={product.url} alt={product.title} />
+                                    <div className="px-6 py-4 flex-grow">
+                                        <div className="font-bold text-xl mb-2">{product.nombre}</div>
+                                        <p className="text-gray-700 text-base mb-2" dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
+                                        <p className="text-gray-800 text-xl">${product.precio}</p>
+                                    </div>
+                                    <div className="px-6 py-4 flex justify-center items-center flex-col space-y-4">
                                         <button
-                                            className={style.btnAddToCart} // Estilo para el botón "Agregar al carrito"
-                                            onClick={() => handleAddToCart(product)} // Manejador del evento click
+                                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none"
+                                            onClick={() => handleAddToCart(product)}
                                         >
+                                            <AddShoppingCartIcon className="mr-2" />
                                             Agregar al carrito
                                         </button>
+                                        <Link
+                                            to={`/product-detail/${product.id}`}
+                                            className="text-blue-500 hover:underline focus:outline-none"
+                                            onClick={() => handleViewDetails(product.id)}
+                                        >
+                                            Ver detalle
+                                        </Link>
                                     </div>
                                 </div>
                             ))
                         ) : (
                             // Si no hay combos, muestra un mensaje
-                            <p>No hay combos disponibles.</p>
+                            <p className="text-center col-span-4">No hay combos disponibles.</p>
                         )}
                     </div>
-                </div>
-            )}
-        </>
+                )}
+            </div>
+        </div>
     );
 };
 
