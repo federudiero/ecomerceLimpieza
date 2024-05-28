@@ -42,12 +42,12 @@ const Filter = () => {
     };
 
     return (
-        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg">
-            <div className="flex items-center mb-4">
+        <div className="flex flex-col lg:flex-row items-center p-4 bg-white shadow-md rounded-lg">
+            <div className="flex items-center mb-4 lg:mb-0 lg:mr-4">
                 <CategoryIcon className="mr-2"/>
                 <h3 className="text-xl font-semibold">Categorías</h3>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 lg:mb-0 lg:mr-4">
                 <select className="form-select block w-full mt-1 bg-white text-black border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
                     <option value="All">Todos los productos</option>
                     {uniqueCategories.map(category => (
@@ -55,7 +55,7 @@ const Filter = () => {
                     ))}
                 </select>
             </div>
-            <div className="mb-4 w-full">
+            <div className="mb-4 lg:mb-0 lg:mr-4 w-full">
                 <input type="text" placeholder="Buscar..." className="input input-bordered w-full bg-white border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value={searchTerm} onChange={handleSearch} />
             </div>
             <button className="btn bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" onClick={handleResetFilters}>Eliminar Filtros</button>

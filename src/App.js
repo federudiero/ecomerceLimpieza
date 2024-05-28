@@ -12,6 +12,8 @@ import ContactoView from './views/ContactoView';
 import FormularioFirebaseView from './views/FormularioFirebaseView';
 import WhatsAppButton from '../src/Components/whatsapp/WhatsAppButton';
 import Balanceado from './views/Balanceado';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
         <Route path="/balanceado" element={<Balanceado />} />
       </Routes>
       <Footer/>
+      <ToastContainer />
     </div>
   );
 }

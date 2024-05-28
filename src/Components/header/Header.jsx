@@ -12,12 +12,12 @@ function Header({ scrollToCards, scrollToCarousel, scrollToCarousel2 }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="hero min-h-screen relative overflow-hidden border-b-2 border-blue-500">
+    <div className="hero min-h-screen relative overflow-hidden ">
       <div className={style.headerContainerimgbg}></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md mx-auto">
-          <h1 className="mb-5 text-5xl font-bold text-white">Limpiar es más fácil con nosotros</h1>
-          <p className="mb-5 text-white font-semibold text-xl">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
+          <h1 className="mb-5 text-5xl font-bold text-black">Limpiar es más fácil con nosotros</h1>
+          <p className="mb-5 text-black font-semibold text-xl ">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
           <Link
             to="/#"
             className={style.buttonCustom}

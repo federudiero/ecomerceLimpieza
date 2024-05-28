@@ -42,6 +42,8 @@
     color: black;
     width: 600px;
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {

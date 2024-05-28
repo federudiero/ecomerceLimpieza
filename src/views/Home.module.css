@@ -1,5 +1,5 @@
 .containerHeader {
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(255, 255, 255)  ;
   height: auto; /* Ajusta la altura automáticamente */
   display: flex;
   flex-direction: column;
@@ -11,13 +11,13 @@
 .containerCardsHome {
   background-size: cover;
   background-position: center;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(255, 255, 255)  ;
   padding: 20px;
 }
 
 @media only screen and (max-width: 768px) {
   .containerHeader {
-    background-image: linear-gradient(rgba(238, 238, 238, 0.73), rgba(221, 221, 221, 0.714));
+  background-color: rgb(255, 255, 255)  ;
       height: auto; /* Ajusta la altura automáticamente */
       display: flex;
       flex-direction: column;

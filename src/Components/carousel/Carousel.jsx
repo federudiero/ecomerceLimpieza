@@ -19,7 +19,7 @@ const Carousel = () => {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-        alert('Producto agregado al carrito');
+      
     };
 
     const handleViewDetails = (id) => {
@@ -37,10 +37,10 @@ const Carousel = () => {
                 {loading ? (
                     <p className="text-center text-gray-700">Cargando productos...</p>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                         {combos.length > 0 ? (
                             combos.map(product => (
-                                <div key={product.id} className="max-w-xs rounded overflow-hidden shadow-md bg-white flex flex-col h-full transform transition-transform hover:scale-105">
+                                <div key={product.id} className="w-full max-w-xs rounded overflow-hidden shadow-md bg-white flex flex-col h-full transform transition-transform hover:scale-105">
                                     <img className="w-full h-64 object-cover" src={product.url} alt={product.title} />
                                     <div className="px-6 py-4 flex-grow">
                                         <div className="font-bold text-xl mb-2 text-gray-800">{product.nombre}</div>

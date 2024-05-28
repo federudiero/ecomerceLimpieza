@@ -16,7 +16,7 @@ function Card({ id, nombre, category, precio, url }) {
   };
 
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between transform transition duration-300 hover:shadow-2xl hover:scale-105">
       <div className="flex-grow">
         <img className="w-full h-56 object-cover" src={url} alt="Product" />
         <div className="px-6 py-4">

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { app, db } from '../../firebase/Firebase';
-import style from './FormularioCargaProducto.module.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import { capitalize } from 'lodash'; // Importa la función capitalize de lodash
+import { capitalize } from 'lodash';
 
 function FormularioCargaProducto() {
   const [archivoUrl, setArchivoUrl] = useState('');
@@ -30,7 +29,6 @@ function FormularioCargaProducto() {
     e.preventDefault();
     let { nombre, category, precio, descripcion } = formData;
 
-    // Capitaliza la primera letra de nombre y category
     nombre = capitalize(nombre);
     category = capitalize(category);
 
@@ -131,15 +129,20 @@ function FormularioCargaProducto() {
   const productosFiltrados = filtrarProductosPorCategoria(filtroCategoria);
 
   return (
-    <div className={style.containerForm}>
-      <form className={style.form} style={{ margin: '100px' }} onSubmit={submitHandler}>
-        <input type="file" onChange={archivoHandler} />
+    <div className="container mx-auto my-10 p-8 bg-gray-800 text-white shadow-md rounded-lg">
+      <form className="space-y-4" onSubmit={submitHandler}>
+        <input 
+          type="file" 
+          onChange={archivoHandler} 
+          className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+        />
         <input
           type="text"
           name="nombre"
           placeholder="Nombre del Producto"
           value={formData.nombre}
           onChange={handleInputChange}
+          className="block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md"
         />
         <input
           type="text"
@@ -147,6 +150,7 @@ function FormularioCargaProducto() {
           placeholder="Categoría"
           value={formData.category}
           onChange={handleInputChange}
+          className="block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md"
         />
         <input
           type="number"
@@ -154,21 +158,26 @@ function FormularioCargaProducto() {
           placeholder="Precio"
           value={formData.precio}
           onChange={handleInputChange}
+          className="block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md"
         />
         <textarea
           name="descripcion"
           placeholder="Descripción del Producto"
           value={formData.descripcion}
           onChange={handleInputChange}
+          className="block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md"
         />
-        <button type="submit">{editingProductId ? 'Actualizar' : 'Enviar'}</button>
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md">
+          {editingProductId ? 'Actualizar' : 'Enviar'}
+        </button>
       </form>
 
-      <div>
-        <div className={style.filtrar}>
+      <div className="mt-8">
+        <div className="mb-4">
           <select
             value={filtroCategoria}
             onChange={(e) => setFiltroCategoria(e.target.value)}
+            className="block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md"
           >
             <option value="">Todos</option>
             {Array.from(new Set(docus.map((producto) => producto.category))).map(
@@ -181,20 +190,18 @@ function FormularioCargaProducto() {
           </select>
         </div>
 
-        <ul className={style.listaProductos}>
+        <ul className="space-y-4">
           {productosFiltrados.map((producto) => (
-            <li className={style.producto} key={producto.id}>
-              <img className={style.imagen} src={producto.url} alt={producto.nombre} width="100" />
-              <strong>{producto.nombre}</strong>
-              <strong>{producto.category}</strong>
-              <strong>${producto.precio}</strong>
-             
-              <br />
-              <div className={style.buttons}>
-                <button onClick={() => eliminarProducto(producto.id)}>
+            <li key={producto.id} className="p-4 border border-gray-600 bg-gray-700 text-white rounded-md flex flex-col items-start">
+              <img src={producto.url} alt={producto.nombre} className="w-24 h-24 object-cover mb-2"/>
+              <strong className="text-lg">{producto.nombre}</strong>
+              <span className="text-sm text-gray-400">{producto.category}</span>
+              <span className="text-lg font-semibold">${producto.precio}</span>
+              <div className="mt-2 flex space-x-2">
+                <button onClick={() => eliminarProducto(producto.id)} className="bg-red-500 text-white p-2 rounded-md">
                   <DeleteForeverIcon />
                 </button>
-                <button onClick={() => editarProducto(producto)}>
+                <button onClick={() => editarProducto(producto)} className="bg-yellow-500 text-white p-2 rounded-md">
                   <EditIcon />
                 </button>
               </div>

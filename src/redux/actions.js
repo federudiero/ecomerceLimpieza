@@ -2,6 +2,7 @@ import { SHOW_ALERT, HIDE_ALERT, DATA_JSON, FILTER_BY_CATEGORY, FILTER_BY_PRICE_
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/Firebase'; // Asegúrate de importar correctamente tu instancia de Firestore (db)
+import { toast } from 'react-toastify'; // Importa react-toastify
 
 export const loadProducts = () => {
   return async (dispatch) => {
@@ -86,12 +87,12 @@ export const addToCart = (product) => {
         return item;
       });
       localStorage.setItem('cart', JSON.stringify(updatedCart));
-      dispatch(showAlert('Producto agregado al carrito'));
+      toast.success('Producto agregado al carrito'); // Muestra la notificación de éxito
       dispatch(updateCart(updatedCart));
     } else {
       const updatedCart = [...state.cart, { ...product, cantidad: 1 }];
       localStorage.setItem('cart', JSON.stringify(updatedCart));
-      dispatch(showAlert('Producto agregado al carrito'));
+      toast.success('Producto agregado al carrito'); // Muestra la notificación de éxito
       dispatch(updateCart(updatedCart));
     }
   };
@@ -124,6 +125,7 @@ export const searchByName = searchTerm => ({
 });
 
 export const showAlert = (message) => {
+  toast(message); // Usa react-toastify para mostrar la alerta
   return {
     type: SHOW_ALERT,
     payload: message

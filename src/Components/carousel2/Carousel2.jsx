@@ -26,7 +26,7 @@ const Carousel2 = () => {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-        alert('Producto agregado al carrito');
+      
     };
 
     return (
@@ -38,7 +38,7 @@ const Carousel2 = () => {
               
             </div>
             {loading ? (
-                <p>Cargando productos...</p>
+                <p className="text-black font-bold text-800 text-xl">Cargando productos...</p>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {randomCombos.length > 0 ? (

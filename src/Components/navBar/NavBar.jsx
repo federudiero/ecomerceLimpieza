@@ -32,8 +32,8 @@ function NavBar() {
     <div className="fixed top-0 w-full bg-gray-800 text-white py-4 z-10">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold flex items-center">
-          <HomeIcon className="mr-2" />
-          Limpio Contento
+          <HomeIcon className="mr-2 " />
+        
         </Link>
         <div className="flex space-x-4">
           <a onClick={handleClick} href={whatsappUrl} target="_blank" rel="noopener noreferrer">
