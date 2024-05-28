@@ -51,7 +51,7 @@ function Cards() {
       {filteredBySearch.length === 0 ? ( 
         
         <div className={style.noProducts}>
-          <p>Cargando Productos...</p>
+          <p>No hay productos que coincidan con tu búsqueda</p>
         </div>
       ) : (
         <div className={style.cardsContainer}>
