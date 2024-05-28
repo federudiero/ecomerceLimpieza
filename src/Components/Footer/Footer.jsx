@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate de react-router-dom
 import { Modal } from '@mui/material';
 import FormatOverlineIcon from '@mui/icons-material/FormatOverline';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -10,6 +10,7 @@ import style from './Footer.module.css';
 function Footer() {
   const [password, setPassword] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate(); // Usa useNavigate para la redirección
 
   const handleModalOpen = () => {
     setModalOpen(true);
@@ -23,7 +24,7 @@ function Footer() {
     const correctPassword = '081295'; // Reemplaza con tu contraseña correcta
     if (password === correctPassword) {
       // Redirige al usuario a la página del formulario si la contraseña es correcta
-      window.location.href = '/formulario';
+      navigate('/formulario');
     } else {
       alert('Contraseña incorrecta. Inténtalo de nuevo.');
     }
@@ -36,10 +37,10 @@ function Footer() {
   return (
     <footer className={style.footerContainer}>
       <nav className={style.navContainer}>
-        <Link to={`/nosotros`} className={style.btn}>
+        <Link to="/nosotros" className={style.btn}>
           Nosotros
         </Link>
-        <Link to={`/contacto`} className={style.btn}>
+        <Link to="/contacto" className={style.btn}>
           Contacto
         </Link>
       </nav>
@@ -57,18 +58,18 @@ function Footer() {
         <p className={style.p}>
           Copyright © 2024 - All right reserved by Developer- Federico Rudiero  <CodeIcon />  
         </p>
-          <Link
+        <Link
           to="#"
           onClick={handleModalOpen}
           className="btn"
-          style={{ background: '#393939', color: 'black' ,height:"20px",width:"20px" }}
+          style={{ background: '#393939', color: 'black', height: "20px", width: "20px" }}
         >
           <FormatOverlineIcon />
         </Link>
       
         <Modal open={modalOpen} onClose={handleModalClose}>
           <div style={{ padding: 20, backgroundColor: 'grey' }}>
-            <h2 style={{ color:"black" }}>Ingresa la contraseña para acceder al formulario:</h2>
+            <h2 style={{ color: "black" }}>Ingresa la contraseña para acceder al formulario:</h2>
             <input
               type="password"
               value={password}
@@ -76,7 +77,7 @@ function Footer() {
               placeholder="Contraseña"
               style={{ margin: '10px 0', padding: '5px' }}
             />
-            <button style={{ marginLeft: '10px' ,color:"black" }} onClick={handleAccessForm}>Acceder</button>
+            <button style={{ marginLeft: '10px', color: "black" }} onClick={handleAccessForm}>Acceder</button>
           </div>
         </Modal>
       </aside>
