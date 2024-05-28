@@ -30,32 +30,30 @@ function ProductDetail({ productId }) {
   }
 
   return (
-    <div className={`${styles.container}`}>
+    <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img className={`${styles.image}`} src={selectedProduct.url} alt="Producto" />
+        <img className={styles.image} src={selectedProduct.url} alt="Producto" />
       </div>
-      <a href="/" className={`absolute ${styles.backButton}`}>
-        <ArrowCircleLeftIcon className={`${styles.arrowIcon}`} />
+      <a href="/" className={styles.backButton}>
+        <ArrowCircleLeftIcon className={styles.arrowIcon} />
       </a>
-      <div className={`flex flex-col ${styles.productInfo}`}>
-        <div className="p-6 flex flex-col justify-between flex-grow">
-          <div>
-            <h2 className={`${styles.title}`}>{selectedProduct.nombre}</h2>
-            <p className={`${styles.description}`}>{selectedProduct.descripcion}</p>
-            <div className={`${styles.priceContainer}`}>
-              <span className={`${styles.price}`}>${selectedProduct.precio}</span>
-              <span className={`${styles.category}`}>Categoría: {selectedProduct.category}</span>
-            </div>
+      <div className={styles.productInfo}>
+        <div>
+          <h2 className={styles.title}>{selectedProduct.nombre}</h2>
+          <p className={styles.description}>{selectedProduct.descripcion}</p>
+          <div className={styles.priceContainer}>
+            <span className={styles.price}>${selectedProduct.precio}</span>
+            <span className={styles.category}>Categoría: {selectedProduct.category}</span>
           </div>
-          <div className="mt-6 flex justify-end">
-            <button
-              className={`bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-full flex items-center shadow-md ${styles.addToCartButton}`}
-              onClick={handleAddToCart}
-            >
-              <AddShoppingCartIcon className="mr-2" />
-              Agregar al carrito
-            </button>
-          </div>
+        </div>
+        <div className="mt-6 flex justify-end">
+          <button
+            className={styles.addToCartButton}
+            onClick={handleAddToCart}
+          >
+            <AddShoppingCartIcon className="mr-2" />
+            Agregar al carrito
+          </button>
         </div>
       </div>
     </div>
@@ -63,4 +61,3 @@ function ProductDetail({ productId }) {
 }
 
 export default ProductDetail;
-
