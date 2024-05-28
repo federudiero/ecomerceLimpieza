@@ -19,7 +19,6 @@ const Carousel = () => {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-      
     };
 
     const handleViewDetails = (id) => {
@@ -31,8 +30,8 @@ const Carousel = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-blue-300 py-8" style={{ backgroundColor: 'rgb(58, 101, 149)' }}>
-            <div className="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+        <div className="flex justify-center items-center min-h-screen bg-blue-300 py-8" style={{ backgroundColor: 'rgb(58, 101, 149)',padding: '20px' }}>
+            <div className="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg" style={{ padding: '20px' }}> {/* Aquí se agregó el padding de 20 pixeles */}
                 <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Ofertas en Combos de Limpieza</h2>
                 {loading ? (
                     <p className="text-center text-gray-700">Cargando productos...</p>
@@ -40,14 +39,16 @@ const Carousel = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                         {combos.length > 0 ? (
                             combos.map(product => (
-                                <div key={product.id} className="w-full max-w-xs rounded overflow-hidden shadow-md bg-white flex flex-col h-full transform transition-transform hover:scale-105">
-                                    <img className="w-full h-64 object-cover" src={product.url} alt={product.title} />
-                                    <div className="px-6 py-4 flex-grow">
-                                        <div className="font-bold text-xl mb-2 text-gray-800">{product.nombre}</div>
-                                        <p className="text-gray-700 text-base mb-4" dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
-                                        <p className="text-gray-800 text-lg font-semibold">${product.precio}</p>
+                                <div key={product.id} className="w-48 rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between transform transition-transform hover:scale-105">
+                                    <div className="flex-grow">
+                                        <img className="w-full h-48 object-cover" src={product.url} alt={product.title} />
+                                        <div className="px-4 py-2">
+                                            <div className="font-bold text-lg mb-2 text-gray-800">{product.nombre}</div>
+                                            <p className="text-gray-700 text-sm mb-4" dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
+                                            <p className="text-gray-800 text-lg">${product.precio}</p>
+                                        </div>
                                     </div>
-                                    <div className="px-6 py-4 flex justify-center items-center flex-col space-y-4">
+                                    <div className="px-4 py-2 flex justify-center items-center flex-col space-y-2">
                                         <button
                                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none shadow-sm"
                                             onClick={() => handleAddToCart(product)}

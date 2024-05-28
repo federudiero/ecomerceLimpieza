@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeCart, updateCartCount } from '../../redux/actions';
-import style from './Carrito.module.css';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { Link } from 'react-router-dom';
 import Count from '../Count/Count';
@@ -55,20 +54,22 @@ function Carrito() {
       {cart.length === 0 ? (
         <p className="text-3xl font-bold text-gray-700">No hay productos en el carrito</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 p-5">
           {cart.map(item => (
-            <div key={item.id} className="bg-white rounded-lg shadow-lg p-4">
-              <img className="w-32 h-32 object-cover rounded-full mx-auto" src={item.url} alt={item.nombre} />
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold text-gray-800">{item.nombre}</h3>
-                <p className="text-gray-600">Precio por unidad: ${item.precio}</p>
-                <Count initialValue={cartCounts[item.id] || 1} onCountChange={(count) => handleCountChange(item.id, count)} />
-                <p className="text-gray-600">Total: ${parseFloat((item.precio * (cartCounts[item.id] || 1)).toFixed(2))}</p>
-                <button onClick={() => handleRemoveFromCart(item.id)} className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center">
-                  <DeleteOutlineIcon className="mr-2" />
-                  Eliminar
-                </button>
-              </div>
+            <div key={item.id} className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center" style={{ width: '250px', height: '450px' }}>
+              <img className="w-32 h-32 object-cover rounded-full" src={item.url} alt={item.nombre} />
+              <div className="mt-4 w-full flex-grow flex flex-col justify-between">
+  <div style={{ minHeight: '150px' }} className="flex flex-col justify-between">
+    <h3 className="text-xl font-semibold text-gray-800 ">{item.nombre}</h3>
+    <p className="text-gray-600 ">Precio por unidad: ${item.precio}</p>
+    <Count  initialValue={cartCounts[item.id] || 1} onCountChange={(count) => handleCountChange(item.id, count)} />
+    <p className="text-gray-600 ">Total: ${parseFloat((item.precio * (cartCounts[item.id] || 1)).toFixed(2))}</p>
+  </div>
+  <button onClick={() => handleRemoveFromCart(item.id)} className="mt-4 mb-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center justify-center w-full">
+    <DeleteOutlineIcon className="mr-2" />
+    Eliminar
+  </button>
+</div>
             </div>
           ))}
         </div>

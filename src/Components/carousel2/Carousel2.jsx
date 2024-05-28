@@ -26,48 +26,41 @@ const Carousel2 = () => {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-      
     };
 
     return (
-        <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center">
-                <img src={perro} alt="" className="w-48 h-48 mb-4" />
-               
-                <Link to={'/balanceado'} className="text-blue-500 hover:underline mb-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none">Ver más</Link>
-              
+        <div className="flex flex-col items-center bg-gray-100 p-8 rounded-lg shadow-lg">
+            <div className="flex flex-col items-center mb-8">
+                <img src={perro} alt="" className="w-48 h-48 mb-4 rounded-full" />
+                <Link to={'/balanceado'} className="text-blue-500 hover:underline bg-blue-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none mb-4">Ver más</Link>
             </div>
             {loading ? (
-                <p className="text-black font-bold text-800 text-xl">Cargando productos...</p>
+                <p className="text-black font-bold text-2xl">Cargando productos...</p>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {randomCombos.length > 0 ? (
                         randomCombos.map(product => (
-                            <div key={product.id} className="max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
-                                <img className="w-full h-56 object-cover" src={product.url} alt={product.title} />
-                                <div className="p-4 h-56 flex flex-col justify-between">
+                            <div key={product.id} className="w-64 bg-white rounded-lg shadow-md overflow-hidden h-96"> {/* Ajuste de altura total */}
+                                <img className="w-full h-48 object-cover rounded-t-lg" src={product.url} alt={product.title} />
+                                <div className="p-4 flex flex-col justify-between h-48"> {/* Ajuste de altura interna */}
                                     <div>
                                         <h3 className="text-xl font-semibold mb-2">{product.nombre}</h3>
-                                        <p className="text-gray-800 text-xl">${product.precio}</p>
+                                        <p className="text-gray-800 text-lg mb-4">${product.precio}</p>
                                     </div>
                                     <button
-                                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none inline-block"
+                                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none inline-block mt-auto"
                                         onClick={() => handleAddToCart(product)}
                                     >
                                         Agregar al carrito
                                     </button>
                                 </div>
-                                
                             </div>
-                            
                         ))
                     ) : (
                         <p className="text-center col-span-4">No hay productos disponibles.</p>
                     )}
                 </div>
-                
             )}
-            
         </div>
     );
 };
