@@ -51,7 +51,7 @@ const ComponentBalanceado = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-gray-300 to-white p-4">
+        <div className=" min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-300 to-white p-4">
            <div className="flex flex-col items-center mt-20">
     <img src={perro} alt="" className="w-48 h-48" />
     <h2 className="text-4xl font-bold text-gray-800 mt-4">Comida para tu mascota</h2>

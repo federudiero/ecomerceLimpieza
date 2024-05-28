@@ -190,9 +190,9 @@ function FormularioCargaProducto() {
           </select>
         </div>
 
-        <ul className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {productosFiltrados.map((producto) => (
-            <li key={producto.id} className="p-4 border border-gray-600 bg-gray-700 text-white rounded-md flex flex-col items-start">
+            <div key={producto.id} className="p-4 border border-gray-600 bg-gray-700 text-white rounded-md flex flex-col items-start">
               <img src={producto.url} alt={producto.nombre} className="w-24 h-24 object-cover mb-2"/>
               <strong className="text-lg">{producto.nombre}</strong>
               <span className="text-sm text-gray-400">{producto.category}</span>
@@ -205,9 +205,9 @@ function FormularioCargaProducto() {
                   <EditIcon />
                 </button>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,9 @@ import ComponentBalanceado from '../Components/Balanceado/ComponentBalanceado'
 
 function Balanceado() {
   return (
-    <div><ComponentBalanceado/></div>
+    <div className="min-h-screen flex flex-col">
+      <ComponentBalanceado />
+    </div>
   )
 }
 
