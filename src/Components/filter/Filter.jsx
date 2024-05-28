@@ -1,9 +1,7 @@
-// Filter.js
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterByCategory, resetFilters, searchByName } from '../../redux/actions'; // Asegúrate de importar las acciones necesarias
+import { filterByCategory, resetFilters, searchByName } from '../../redux/actions';
 import CategoryIcon from '@mui/icons-material/Category';
-import style from './ButtonFilter.module.css';
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -34,7 +32,6 @@ const Filter = () => {
     };
 
     const handleSearch = event => {
-
         const term = event.target.value;
         dispatch(resetFilters());
         dispatch(searchByName(term));
@@ -45,23 +42,23 @@ const Filter = () => {
     };
 
     return (
-        <div className={style.filtercontainer}>
-            <CategoryIcon/>
-                    <h3 className={style.h3Carousel}>categorias</h3>
-            <div>
-                <select className={style.buttonSelect} defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
-                    <option className={style.options} value="All">Todos los productos</option>
+        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg">
+            <div className="flex items-center mb-4">
+                <CategoryIcon className="mr-2"/>
+                <h3 className="text-xl font-semibold">Categorías</h3>
+            </div>
+            <div className="mb-4">
+                <select className="form-select block w-full mt-1 bg-white text-black border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
+                    <option value="All">Todos los productos</option>
                     {uniqueCategories.map(category => (
-                        <option className={style.options} key={category} value={category}>{category}</option>
+                        <option key={category} value={category}>{category}</option>
                     ))}
                 </select>
             </div>
-
-            <div className="form-control">
-                <input type="text" placeholder="Buscar..." className="input input-bordered w-24 md:w-auto bg-white" value={searchTerm} onChange={handleSearch} />
+            <div className="mb-4 w-full">
+                <input type="text" placeholder="Buscar..." className="input input-bordered w-full bg-white border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value={searchTerm} onChange={handleSearch} />
             </div>
-
-            <button className={style.buttonResete} onClick={handleResetFilters}>Eliminar Filtros</button>
+            <button className="btn bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" onClick={handleResetFilters}>Eliminar Filtros</button>
         </div>
     );
 };

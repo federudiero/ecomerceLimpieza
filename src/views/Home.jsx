@@ -49,6 +49,7 @@ function Home() {
       <div className={style.containerHeader}>
         <div className={`${style.flexContainer} flex flex-col items-center justify-center `}>
           <ComponenteDescuento />
+          <br />
           <ComoTrabajo />
       <div ref={carouselRef2}>
         <Carousel2 />

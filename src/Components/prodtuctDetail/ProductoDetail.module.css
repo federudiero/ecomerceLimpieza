@@ -1,7 +1,98 @@
-.linkButon{
-    height: 100px;
-    width: 100px;
-color: aqua;   
-font-size: 25px; 
-background-color: bisque;
-}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+  }
+  
+  .imageContainer {
+    width: 400px;
+    height: 400px;
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .backButton {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .arrowIcon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: #f7df1e;
+  }
+  
+  .productInfo {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 500px; /* Ancho predeterminado */
+    max-height: 600px; /* Alto predeterminado */
+    overflow-y: auto; /* Desbordamiento vertical si es necesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Espacio entre el título y la descripción */
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px; /* Espacio entre la descripción y el precio */
+  }
+  
+  .priceContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .category {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .addToCartButton {
+    margin-top: 20px;
+    background-color: #f59e0b;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addToCartButton:hover {
+    background-color: #fbbf24;
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+  }
+  

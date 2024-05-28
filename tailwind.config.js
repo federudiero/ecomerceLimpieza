@@ -4,17 +4,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-       
+      margin: {
+        '200': '200px',
       },
     },
   },
-  variants: {
-    extend: {
-     
-    },
-  },
-  // Habilita el modo oscuro basado en clases
   plugins: [
     require('daisyui')
   ],

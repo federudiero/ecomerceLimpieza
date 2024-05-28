@@ -27,7 +27,7 @@ function Card({ id, nombre, category, precio, url }) {
       </div>
       <div className="px-6 py-4">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center justify-center"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-full focus:outline-none flex items-center justify-center"
           onClick={handleAddToCart}
         >
           <AddShoppingCartIcon className="mr-2" />
