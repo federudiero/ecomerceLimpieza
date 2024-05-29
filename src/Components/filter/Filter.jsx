@@ -48,8 +48,8 @@ const Filter = () => {
                 <h3 className="text-xl font-semibold">Categorías</h3>
             </div>
             <div className="mb-4 lg:mb-0 lg:mr-4">
-                <select className="form-select  mt-1 bg-white text-black border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
-                    <option value="All">Todos los productos </option>
+                <select className="form-select mt-1 bg-white text-black border-2 border-gray-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" defaultValue="All" name="filterByCategory" onChange={handleCategoryFilter}>
+                    <option value="All">Todos los productos</option>
                     {uniqueCategories.map(category => (
                         <option key={category} value={category}>{category}</option>
                     ))}

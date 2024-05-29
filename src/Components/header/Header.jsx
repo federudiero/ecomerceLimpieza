@@ -8,40 +8,51 @@ import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import CategoryIcon from '@mui/icons-material/Category';
 import PetsIcon from '@mui/icons-material/Pets';
 
-function Header({ scrollToCards, scrollToCarousel, scrollToCarousel2 }) {
+function Header({ cardsRef, carouselRef, carouselRef2 }) {
   const dispatch = useDispatch();
 
+  const scrollToElement = (ref) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="hero min-h-screen relative overflow-hidden ">
+    <div className="hero min-h-screen relative overflow-hidden">
       <div className={style.headerContainerimgbg}></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md mx-auto">
-          <h1 className="mb-5 text-5xl font-bold text-black">Limpiar es más fácil con nosotros</h1>
-          <p className="mb-5 text-black font-semibold text-xl ">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
-          <Link
-            to="/#"
-            className={style.buttonCustom}
-            onClick={scrollToCards}
-          >
-            <CategoryIcon />
-            Ver Catálogo de Productos
-          </Link>
-          <Link
-            to="/#"
-            className={style.buttonCustom}
-            onClick={scrollToCarousel}
-          >
-            <LocalLaundryServiceIcon />
-            Ver Combos de Limpieza
-          </Link>
-          <Link
-            to="/#"
-            className={style.buttonCustom}
-            onClick={scrollToCarousel2}
-          >
-            <PetsIcon />
-            Balanceado Animales
-          </Link>
+          <h1 className="mb-5 text-4xl lg:text-5xl font-bold text-black">Limpiar es más fácil con nosotros</h1>
+          <p className="mb-5 text-black font-semibold text-lg">Tenemos todo lo que necesitas para que vos y tus ambientes siempre brillen.</p>
+          <div className='flex flex-col items-center space-y-4'>
+            <button
+              className={style.buttonCustom}
+              onClick={() => scrollToElement(cardsRef)}
+            >
+              <CategoryIcon />
+              <br />
+              Ver Catálogo de Productos
+            </button>
+            <button
+              className={style.buttonCustom}
+              onClick={() => scrollToElement(carouselRef)}
+            >
+              <LocalLaundryServiceIcon />
+              <br />
+              Ver Combos de Limpieza
+            </button>
+            <button
+              className={style.buttonCustom}
+              onClick={() => scrollToElement(carouselRef2)}
+            >
+              <PetsIcon />
+              <br />
+              Balanceado Animales
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -33,3 +33,13 @@
 }
   
 
+/* En dispositivos con un ancho de pantalla menor o igual a 640px (celulares), ajusta la altura del encabezado */
+@media (max-width: 640px) {
+  .hero {
+    min-height: calc(100vh + 100px); /* Puedes ajustar el valor según sea necesario */
+  }
+  
+  .text-4xl {
+    font-size: 3rem; /* Ajusta el tamaño del texto */
+  }
+}

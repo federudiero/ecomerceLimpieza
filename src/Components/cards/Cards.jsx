@@ -44,7 +44,7 @@ function Cards() {
 
   return (
     <div className={style.cardsContainerPadreMayor}>
-      <div className={style.ContainerFilterCards}>
+      <div id="filterContainer" className={style.ContainerFilterCards}>
         {showFilter && <Filter />} {/* Mostrar el filtro solo si showFilter es true */}
       </div>
 

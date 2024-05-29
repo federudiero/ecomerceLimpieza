@@ -29,6 +29,16 @@ const Carousel = () => {
         return description.replace(/-/g, '<br>-');
     };
 
+    // Función para separar número y nombre del combo
+    const separarNumeroYNombre = (nombreCombo) => {
+        // Buscamos el índice del primer dígito
+        const index = nombreCombo.search(/\d/);
+        // Extraemos el nombre del combo
+        const nombre = nombreCombo.slice(0, index).trim();
+        // Extraemos el número del combo
+        const numero = nombreCombo.slice(index).trim();
+        return `${nombre} ${numero}`; // Devolvemos una cadena con ambos elementos concatenados
+    };
     return (
         <div className="flex justify-center items-center min-h-screen bg-blue-300 py-8" style={{ backgroundColor: 'rgb(58, 101, 149)', padding: '20px' }}>
             <div className="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg" style={{ padding: '20px' }}>
@@ -38,34 +48,38 @@ const Carousel = () => {
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                         {combos.length > 0 ? (
-                            combos.map(product => (
-                                <div key={product.id} className="w-full sm:w-80 rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between transform transition-transform hover:scale-105">
-                                    <div className="flex-grow">
-                                        <img className="w-full h-48 object-cover" src={product.url} alt={product.title} />
-                                        <div className="px-4 py-2">
-                                            <div className="font-bold text-lg mb-2 text-gray-800">{product.nombre}</div>
-                                            <p className="text-gray-700 text-sm mb-4" dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
-                                            <p className="text-gray-800 text-lg">${product.precio}</p>
+                            combos.map(product => {
+                                // Separar número y nombre del combo
+                                const { numero, nombre } = separarNumeroYNombre(product.nombre);
+                                return (
+                                    <div key={product.id} className="w-full sm:w-80 rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between transform transition-transform hover:scale-105">
+                                        <div className="flex-grow">
+                                            <img className="w-full h-48 object-cover" src={product.url} alt={product.title} />
+                                            <div className="px-4 py-2">
+                                           <h3 className="text-gray-700 text-lg mb-4">{separarNumeroYNombre(product.nombre)}</h3>
+                                                <p className="text-gray-700 text-sm mb-4" dangerouslySetInnerHTML={{ __html: formatDescription(product.descripcion) }} />
+                                                <p className="text-gray-800 text-lg">${product.precio}</p>
+                                            </div>
+                                        </div>
+                                        <div className="px-4 py-2 flex justify-center items-center flex-col space-y-2">
+                                            <button
+                                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none shadow-sm"
+                                                onClick={() => handleAddToCart(product)}
+                                            >
+                                                <AddShoppingCartIcon className="mr-2" />
+                                                Agregar al carrito
+                                            </button>
+                                            <Link
+                                                to={`/product-detail/${product.id}`}
+                                                className="text-blue-500 hover:underline focus:outline-none"
+                                                onClick={() => handleViewDetails(product.id)}
+                                            >
+                                                Ver detalle
+                                            </Link>
                                         </div>
                                     </div>
-                                    <div className="px-4 py-2 flex justify-center items-center flex-col space-y-2">
-                                        <button
-                                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none shadow-sm"
-                                            onClick={() => handleAddToCart(product)}
-                                        >
-                                            <AddShoppingCartIcon className="mr-2" />
-                                            Agregar al carrito
-                                        </button>
-                                        <Link
-                                            to={`/product-detail/${product.id}`}
-                                            className="text-blue-500 hover:underline focus:outline-none"
-                                            onClick={() => handleViewDetails(product.id)}
-                                        >
-                                            Ver detalle
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))
+                                );
+                            })
                         ) : (
                             <p className="text-center col-span-4 text-gray-700">No hay combos disponibles.</p>
                         )}
