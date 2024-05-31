@@ -14,6 +14,7 @@ import WhatsAppButton from '../src/Components/whatsapp/WhatsAppButton';
 import Balanceado from './views/Balanceado';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CartButton from './Components/ButtonCart/CartButton';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
     <div className="App">
       <NavBar />
         <WhatsAppButton/>
+        <CartButton/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product-detail/:productId" element={<DetailProductoId />} />

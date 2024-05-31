@@ -11,8 +11,13 @@ function Carrito() {
   const cart = useSelector(state => state.cart);
   const cartCounts = useSelector(state => state.cartCounts);
   const dispatch = useDispatch();
-  const [includeShipping, setIncludeShipping] = useState(false);
-  const shippingCost = 1500;
+  const [shippingZone, setShippingZone] = useState('');
+  const shippingCosts = {
+    'zona-sur': 1500,
+    'zona-norte': 2500,
+    'zona-este': 'envio gratis',
+    'zona-oeste': 2000,
+  };
 
   const handleRemoveFromCart = (itemId) => {
     dispatch(removeCart(itemId));
@@ -27,8 +32,8 @@ function Carrito() {
     cart.forEach(item => {
       total += item.precio * (cartCounts[item.id] || 1);
     });
-    if (includeShipping) {
-      total += shippingCost;
+    if (shippingZone && shippingCosts[shippingZone] !== 'envio gratis') {
+      total += shippingCosts[shippingZone];
     }
     return total;
   };
@@ -38,8 +43,8 @@ function Carrito() {
     cart.forEach(item => {
       message += `${item.nombre}: ${cartCounts[item.id] || 1} x $${item.precio}\n`;
     });
-    if (includeShipping) {
-      message += `Costo de envío: $${shippingCost}\n`;
+    if (shippingZone && shippingCosts[shippingZone] !== 'envio gratis') {
+      message += `Costo de envío (${shippingZone.replace('-', ' ')}): $${shippingCosts[shippingZone]}\n`;
     }
     message += `Total de la compra: $${calculateTotal().toFixed(2)}`;
     return encodeURIComponent(message);
@@ -69,10 +74,10 @@ function Carrito() {
               <img className="w-32 h-32 object-cover rounded-full" src={item.url} alt={item.nombre} />
               <div className="mt-4 w-full flex-grow flex flex-col justify-between">
                 <div style={{ minHeight: '150px' }} className="flex flex-col justify-between">
-                  <h3 className="text-xl font-semibold text-gray-800 ">{item.nombre}</h3>
-                  <p className="text-gray-600 ">Precio por unidad: ${item.precio}</p>
+                  <h3 className="text-xl font-semibold text-gray-800">{item.nombre}</h3>
+                  <p className="text-gray-600">Precio por unidad: ${item.precio}</p>
                   <Count initialValue={cartCounts[item.id] || 1} onCountChange={(count) => handleCountChange(item.id, count)} />
-                  <p className="text-gray-600 ">Total: ${parseFloat((item.precio * (cartCounts[item.id] || 1)).toFixed(2))}</p>
+                  <p className="text-gray-600">Total: ${parseFloat((item.precio * (cartCounts[item.id] || 1)).toFixed(2))}</p>
                 </div>
                 <button onClick={() => handleRemoveFromCart(item.id)} className="mt-4 mb-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center justify-center w-full">
                   <DeleteOutlineIcon className="mr-2" />
@@ -88,10 +93,24 @@ function Carrito() {
       </div>
       {cart.length > 0 && (
         <div className="mt-8 flex flex-col items-center gap-4">
-          <label className="flex items-center">
-            <input type="checkbox" checked={includeShipping} onChange={() => setIncludeShipping(!includeShipping)} />
-            <span className="ml-2 text-black">Agregar envío ($1500) <DeliveryDiningIcon /></span>
-          </label>
+          <p className="text-black text-lg">Selecciona una zona de envío:</p>
+          <div className="flex flex-col items-start">
+            {Object.keys(shippingCosts).map(zone => (
+              <label key={zone} className="flex items-center mb-2">
+                <input
+                  type="radio"
+                  name="shipping"
+                  value={zone}
+                  checked={shippingZone === zone}
+                  onChange={() => setShippingZone(zone)}
+                  className="mr-2"
+                />
+                <span className="text-black">
+                  {zone.replace('-', ' ').toUpperCase()} ({shippingCosts[zone] === 'envio gratis' ? 'envio gratis' : `$${shippingCosts[zone]}`}) <DeliveryDiningIcon />
+                </span>
+              </label>
+            ))}
+          </div>
         </div>
       )}
       <div className="mt-8 flex flex-col items-center gap-4">
