@@ -4,7 +4,7 @@ import img from '../../img/1169767-servicio-de-limpieza-calims-banner-3limpieza-
 function ComponenteDescuento() {
   return (
     <div className={style.ContainerDescuentos}>
-        <h2 className={style.h2Descuento}>15% off en efectivo</h2>
+        <h2 className={style.h2Descuento}>10% off con tu compra mayor a $20000 </h2>
        <img className={style.imgDescuento} src={img} alt="" />
         
       </div>
